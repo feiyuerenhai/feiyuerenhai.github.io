@@ -1,332 +1,306 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-
-
-
-
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="description" content="">
-  <meta name="author" content="feiyuerenhai">
-  <meta name="keywords" content="">
-  <meta id="referrer" name="referrer" content="no-referrer" />
-  <title>飞越人海</title>
-  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
-<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
-<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
-<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script language="javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <title>bootstrap响应式布局</title>
+    <style type="text/css">
+    html,
+    body {
+        font-family: Arial, "微软雅黑";
+    }
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+    body {
+        background-color: #F1F1F1;
+        width: 100%;
+        height: 100%;
+    }
 
+    .boss {
+        position: relative;
+    }
 
+    .slide {
+        width: 100%;
+        height: 100%;
+        background: #DE2424;
+        position: fixed;
+        left: 100%;
+        top: 0;
+    }
 
-  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+    .row {
+        margin-top: 15px;
+    }
 
-<link rel="stylesheet" href="/css/main.css"  >
+    .cube {
+        max-width: 300px;
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        background: #FFFFFF;
+    }
 
+    .abstract {
+        text-align: center;
+        height: 210px;
+        background: #FFFFFF;
+        padding-left: 13px;
+        padding-right: 13px;
+        box-shadow: -0.5px -0.5px 5px #DDDDDD;
+    }
 
-  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
+    .caption {
+        font-size: 24px;
+        line-height: 50px;
+        height: 50px;
+        color: #3A3A3A;
+    }
 
+    .time {
+        font-size: 14px;
+        line-height: 30px;
+        height: 30px;
+        color: #999999;
+    }
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+    .info {
+        font-size: 14px;
+        line-height: 30px;
+        height: 120px;
+        text-indent: 28px;
+        overflow: hidden;
+        color: #999999;
+    }
+
+    /**/
+    .navbar-header {
+        height: 60px;
+    }
+
+    .navbar-toggle {
+        margin-top: 13px;
+    }
+
+    .navbar {
+        border-radius: 0;
+        background-color: #000000;
+        border: none;
+    }
+
+    .navbar li {
+        min-width: 120px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .navbar-nav li a {
+        line-height: 30px;
+    }
+
+    .navbar-inverse .navbar-nav>.active>a,
+    .navbar-inverse .navbar-nav>.active>a:focus,
+    .navbar-inverse .navbar-nav>.active>a:hover {
+        background-color: #333333;
+    }
+
+    .navbar li:hover {
+        background-color: #333333;
+
+    }
+
+    /*.navbar-brand{
+		height:60px;
+		position:absolute;
+		left:15px;
+	}*/
+    .navbar>.container .navbar-brand,
+    .navbar>.container-fluid .navbar-brand {
+        line-height: 30px;
+    }
+
+    .extra {
+        line-height: 60px;
+        margin-left: 50px;
+        color: #FFFFFF;
+    }
+
+    /**/
+    .footer {
+        width: 100%;
+        background-color: #000000;
+        color: #FFFFFF;
+    }
+
+    .foot {
+        width: 100%;
+        height: 90px;
+        padding-left: 10px;
+
+    }
+
+    .flink {
+        margin: 20px 20px 10px 0;
+        color: #CECECE;
+        display: inline-block;
+    }
+
+    .copyright {
+        font-size: 12px;
+        color: #8E8E8E;
+    }
+    </style>
+    <script type="text/javascript">
+    $(document).ready(function($) {
+        $("img").click(function(event) {
+            // history.pushState(null, '', 'newpage.html');
+            $(".slide").animate({ "left": "0" }, "fast");
+            $.ajax({
+                    url: 'new.html',
+                    type: 'GET',
+                    dataType: 'html',
+                })
+                .done(function(d) {
+                    document.getElementById('ifrm').contentWindow.document.write(d);
+                })
+                .fail(function() {})
+        });
+    });
+    </script>
+</head>
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>飞越人海</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">首页</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">归档</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">分类</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">标签</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">关于</a>
-          </li>
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.png')no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask rgba-black-light flex-center">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
+    <div class="boss">
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">飞越人海</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right" id="mynavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">html</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">javascript</a></li>
+                        <li><a href="#">more+</a></li>
+                    </ul>
+                    <div class="navbar-right hidden-xs hidden-sm extra"><img src="contact_qq.png" /></div>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container">
             <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-              </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="cube">
+                        <img class="img-responsive" width="300" height="150" src="thumbnail.jpg" />
+                        <div class="abstract">
+                            <div class="caption">你们好</div>
+                            <div class="time">2015年6月23日</div>
+                            <div class="info">这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="cube">
+                        <img class="img-responsive" width="300" height="150" src="thumbnail.jpg" />
+                        <div class="abstract">
+                            <div class="caption">你们好</div>
+                            <div class="time">2015年6月23日</div>
+                            <div class="info">这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="cube">
+                        <img class="img-responsive" width="300" height="150" src="thumbnail.jpg" />
+                        <div class="abstract">
+                            <div class="caption">你们好</div>
+                            <div class="time">2015年6月23日</div>
+                            <div class="info">这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="cube">
+                        <img class="img-responsive" width="300" height="150" src="thumbnail.jpg" />
+                        <div class="abstract">
+                            <div class="caption">你们好</div>
+                            <div class="time">2015年6月23日</div>
+                            <div class="info">这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="cube">
+                        <img class="img-responsive" width="300" height="150" src="thumbnail.jpg" />
+                        <div class="abstract">
+                            <div class="caption">你们好</div>
+                            <div class="time">2015年6月23日</div>
+                            <div class="info">这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="cube">
+                        <img class="img-responsive" width="300" height="150" src="thumbnail.jpg" />
+                        <div class="abstract">
+                            <div class="caption">你们好</div>
+                            <div class="time">2015年6月23日</div>
+                            <div class="info">这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="cube">
+                        <img class="img-responsive" width="300" height="150" src="thumbnail.jpg" />
+                        <div class="abstract">
+                            <div class="caption">你们好</div>
+                            <div class="time">2015年6月23日</div>
+                            <div class="info">这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="cube">
+                        <img class="img-responsive" width="300" height="150" src="thumbnail.jpg" />
+                        <div class="abstract">
+                            <div class="caption">你们好</div>
+                            <div class="time">2015年6月23日</div>
+                            <div class="info">这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容这是消息内容</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    
-  </main>
-
-  
-    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
-      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+        <div class="footer">
+            <div class="container">
+                <div class="foot row hidden-xs">
+                    <div class="flink">关于我们</div>
+                    <div class="flink">欧鱼网络</div>
+                    <div class="flink">Beam CMS</div>
+                    <div class="flink">Mellow</div>
+                    <div class="copyright">Copyright (c) 2015 oyotek.com. V1.0 - The Silent Riser. All Rights Reserved. 陕ICP备15000819号</div>
+                </div>
+                <div class="foot row hidden-lg hidden-md hidden-sm">
+                    <div class="flink">关于我们</div>
+                    <div class="flink">Mellow</div>
+                    <div class="copyright">Copyright (c) 2015 oyotek.com.</div>
+                </div>
+            </div>
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
     </div>
-  </div>
-</div>
-  
-
-  <footer class="mt-5">
-  <script>
-    var REFERER = document.getElementById('referrer');
-    REFERER && REFERER.setAttribute('content', 'always')
-  </script>
-  <div class="text-center py-3">
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
-    <br>
-
-    
-  
-    <!-- 不蒜子统计PV -->
-    
-    &nbsp;<span id="busuanzi_container_site_pv"></span>总访问量 
-          <span id="busuanzi_value_site_pv"></span> 次&nbsp;
-  
-  
-    <!-- 不蒜子统计UV -->
-    
-    &nbsp;<span id="busuanzi_container_site_uv"></span>总访客数 
-            <span id="busuanzi_value_site_uv"></span> 人&nbsp;
-  
-  <br>
-
-
-
-    
-
-
-    <!-- cnzz Analytics icon -->
-    
-
-  </div>
-</footer>
-
-<!-- SCRIPTS -->
-<script src="/lib/jquery/jquery.min.js" ></script>
-<script src="/lib/popper/popper.min.js" ></script>
-<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
-<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
-<script src="/js/main.js" ></script>
-
-
-
-
-
-
-  <script src="/lib/smoothscroll/SmoothScroll.min.js" ></script>
-
-
-
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-<!-- Plugins -->
-
-
-  
-
-  
-
-  
-
-  
-
-  <!-- cnzz Analytics -->
-  
-
-
-
-  <script src="/lib/prettify/prettify.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      $('pre').addClass('prettyprint  linenums');
-      prettyPrint();
-    })
-  </script>
-
-
-
-  <script src="/lib/typed/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-  <script src="/lib/anchor/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "false",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
-
-
-
-  <script src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      getSearchFile(path);
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
-  <script>
-    $("#post img:not(.no-zoom img, img[no-zoom])").each(
-      function () {
-        var element = document.createElement("a");
-        $(element).attr("data-fancybox", "images");
-        $(element).attr("href", $(this).attr("src"));
-        $(this).wrap(element);
-      }
-    );
-  </script>
-
-
-
-
-
-
-
-
-
-
-
+    <div class="slide"><iframe id="ifrm" width="100%" height="100%" frameborder="0"></iframe></div>
 </body>
+
 </html>

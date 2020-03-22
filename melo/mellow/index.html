@@ -1,332 +1,60 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-
-
-
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="description" content="">
-  <meta name="author" content="feiyuerenhai">
-  <meta name="keywords" content="">
-  <meta id="referrer" name="referrer" content="no-referrer" />
-  <title>È£ûË∂ä‰∫∫Êµ∑</title>
-  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
-<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
-<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
-<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
-
-
-
-  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
-
-<link rel="stylesheet" href="/css/main.css"  >
-
-
-  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
-
-
-<meta name="generator" content="Hexo 4.2.0"></head>
-
-<body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>È£ûË∂ä‰∫∫Êµ∑</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">È¶ñÈ°µ</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">ÂΩíÊ°£</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">ÂàÜÁ±ª</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">Ê†áÁ≠æ</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">ÂÖ≥‰∫é</a>
-          </li>
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.png')no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask rgba-black-light flex-center">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-  </main>
-
-  
-    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
-      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">ÊêúÁ¥¢</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">ÂÖ≥ÈîÆËØç</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-  
-
-  <footer class="mt-5">
-  <script>
-    var REFERER = document.getElementById('referrer');
-    REFERER && REFERER.setAttribute('content', 'always')
-  </script>
-  <div class="text-center py-3">
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
-    <br>
-
-    
-  
-    <!-- ‰∏çËíúÂ≠êÁªüËÆ°PV -->
-    
-    &nbsp;<span id="busuanzi_container_site_pv"></span>ÊÄªËÆøÈóÆÈáè 
-          <span id="busuanzi_value_site_pv"></span> Ê¨°&nbsp;
-  
-  
-    <!-- ‰∏çËíúÂ≠êÁªüËÆ°UV -->
-    
-    &nbsp;<span id="busuanzi_container_site_uv"></span>ÊÄªËÆøÂÆ¢Êï∞ 
-            <span id="busuanzi_value_site_uv"></span> ‰∫∫&nbsp;
-  
-  <br>
-
-
-
-    
-
-
-    <!-- cnzz Analytics icon -->
-    
-
-  </div>
-</footer>
-
-<!-- SCRIPTS -->
-<script src="/lib/jquery/jquery.min.js" ></script>
-<script src="/lib/popper/popper.min.js" ></script>
-<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
-<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
-<script src="/js/main.js" ></script>
-
-
-
-
-
-
-  <script src="/lib/smoothscroll/SmoothScroll.min.js" ></script>
-
-
-
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-<!-- Plugins -->
-
-
-  
-
-  
-
-  
-
-  
-
-  <!-- cnzz Analytics -->
-  
-
-
-
-  <script src="/lib/prettify/prettify.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      $('pre').addClass('prettyprint  linenums');
-      prettyPrint();
-    })
-  </script>
-
-
-
-  <script src="/lib/typed/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-  <script src="/lib/anchor/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "false",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
-
-
-
-  <script src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      getSearchFile(path);
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
-  <script>
-    $("#post img:not(.no-zoom img, img[no-zoom])").each(
-      function () {
-        var element = document.createElement("a");
-        $(element).attr("data-fancybox", "images");
-        $(element).attr("href", $(this).attr("src"));
-        $(this).wrap(element);
-      }
-    );
-  </script>
-
-
-
-
-
-
-
-
-
-
-
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv=Content-Language content=zh-cn>
+<meta name="keywords" content="flash,as3,‘⁄œﬂ,“Ù¿÷,≤•∑≈∆˜,“Ù¿÷∫–,mellow,melo,”⁄∫£ÃŒ,∑…‘Ω»À∫£">
+<meta name="description" content="mellow «”…∑…‘Ω»À∫£ø™∑¢µƒª˘”⁄AS3µƒ“Ù¿÷≤•∑≈∆˜£¨’˚∏ˆ≥Ã–Ú≈‰∫œPHP π”√£¨ø…“‘ µœ÷‘⁄œﬂÃ˝“Ù¿÷£¨À—À˜∏Ë«˙£¨ƒ£ƒ‚NES”Œœ∑£¨RSS‘ƒ∂¡µ»π¶ƒ‹">
+<meta name="Robots" content="all">
+<title>mellow</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<style type="text/css">
+<!--
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #000000;
+}
+a:link {
+	color: #999999;
+}
+a:visited {
+	color: #999999;
+}
+-->
+</style>
+<script>
+//swf÷–”√¿¥∏ƒ±‰“≥√Ê±ÍÃ‚µƒΩ”ø⁄∫Ø ˝
+function SetTitle(info) {
+    document.title=info
+}
+</script>
+</head>
+<body scroll=no>
+<script language="javascript">
+//ºÏ≤‚Adobe Flash Player≤Âº˛
+var isIE = (navigator.appVersion.indexOf("MSIE") >= 0);
+var hasFlash=true;
+if (isIE) {
+	try {
+		var objFlash=new ActiveXObject("ShockwaveFlash.ShockwaveFlash.1");
+	} catch (e) {
+		hasFlash=false;
+	}
+} else {
+	if (! navigator.plugins["Shockwave Flash"]) {
+		hasFlash=false;
+	}
+}
+if (!hasFlash) {
+	document.write('<br></br><div align="center"><font size=2 color="gray">O_o ‘„∏‚ ƒ˙µƒ‰Ø¿¿∆˜Œ¥∆Ù”√ªÚ’ﬂ≤ª÷ß≥÷ <a href=http://get.adobe.com/cn/flashplayer target=_blank>Adobe Flash Player</a> øÿº˛<br></br><br>ƒ˙ø…“‘ <a href=http://get.adobe.com/cn/flashplayer target=_blank>µ„ª˜¥À¥¶</a> ≥¢ ‘∞≤◊∞ ªÚ’ﬂ ªª”√“ª∏ˆ‘À––∆‰À˚œµÕ≥£®»ÁWindows°¢Mac OSµ»£©µƒ…Ë±∏‘Ÿ¥Œ∑√Œ </br><br></br><br><img src="logo.jpg"></img></br></font></div>');
+}
+</script>
+<script language="JavaScript">
+//–¥»Î∫À–ƒswf≥Ã–Ú
+if(hasFlash){
+var num=Math.floor(Math.random()*999999999);
+document.write('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="mellow.swf?'+num+'"codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="100%" height="100%" title=""><param name="movie" value="mellow.swf?'+num+'"><param name="quality" value="high"><param name="allowFullScreen" value="true" /><param name="wmode" value="transparent"><embed src="mellow.swf?'+num+'" width="100%" height="100%" quality="high" allowfullscreen="true" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed></object>');
+}
+</script>
 </body>
 </html>

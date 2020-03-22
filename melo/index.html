@@ -1,332 +1,420 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-
-
-
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="description" content="">
-  <meta name="author" content="feiyuerenhai">
-  <meta name="keywords" content="">
-  <meta id="referrer" name="referrer" content="no-referrer" />
-  <title>飞越人海</title>
-  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
-<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
-<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
-<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
+    <title>飞越人海 | 于海涛</title>
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta charset="utf-8">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
 
+        body {
+            background: #000000;
+        }
 
+        .flex-img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
 
-  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+        .anm {
+            -webkit-transition: all 400ms ease;
+        }
 
-<link rel="stylesheet" href="/css/main.css"  >
+        .anm200 {
+            -webkit-transition: all 200ms ease;
+        }
 
+        .screen {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
 
-  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
+        .film {
+            height: 100%;
+            position: relative;
+        }
 
+        .frame {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            float: left;
+            text-align: center;
+        }
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+        .frame .title {
+            color: #FFFFFF;
+            position: absolute;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            bottom: 5rem;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .tile {
+            width: 16rem;
+            height: 16rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -8rem;
+            margin-top: -9rem;
+            border-radius: 16rem;
+            overflow: hidden;
+        }
+
+        /**/
+        .counter {
+            position: fixed;
+            width: 100%;
+            height: 0.5rem;
+            bottom: 3rem;
+            text-align: center;
+            font-size: 0rem;
+        }
+
+        .particle {
+            display: inline-block;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 0.5rem;
+            background: #494949;
+            margin-left: 0.25rem;
+            margin-right: 0.25rem;
+        }
+
+        .particleActive {
+            background: #D1D1D1;
+        }
+
+        /**/
+        .clock .tile {
+            background: #000000;
+        }
+
+        .clock .title {
+            color: #FFFFFF;
+        }
+
+        .shizhen,
+        .fenzhen,
+        .miaozhen,
+        .center {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .shizhen_shape {
+            position: absolute;
+            width: 0.4rem;
+            height: 20%;
+            left: 7.8rem;
+            top: 25%;
+            background: #FFFFFF;
+            border-radius: 5rem;
+        }
+
+        .fenzhen_shape {
+            position: absolute;
+            width: 0.2rem;
+            height: 35%;
+            left: 7.9rem;
+            top: 10%;
+            background: #FFFFFF;
+            border-radius: 5rem;
+        }
+
+        .miaozhen_shape {
+            position: absolute;
+            width: 0.1rem;
+            height: 40%;
+            left: 7.95rem;
+            top: 5%;
+            background: #f03e00;
+        }
+
+        /**/
+        .music .tile {
+            /*background:#FE4844;*/
+        }
+
+        .music .title {
+            color: #FE4844;
+        }
+
+        /**/
+        .works .tile {
+            /*background:#75F665;*/
+        }
+
+        .works .title {
+            color: #75F665;
+        }
+
+        /**/
+        .theater .tile {
+            /*background:#5D3DC4;*/
+        }
+
+        .theater .title {
+            color: #5D3DC4;
+        }
+
+        /**/
+        .moment .tile {
+            /*background:#FF00FC;*/
+        }
+
+        .moment .title {
+            color: #FF00FC;
+        }
+
+        /**/
+        .daily .tile {
+            /*background:#FE9304;*/
+        }
+
+        .daily .title {
+            color: #FE9304;
+        }
+    </style>
+</head>
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>飞越人海</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">首页</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">归档</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">分类</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">标签</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">关于</a>
-          </li>
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.png')no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask rgba-black-light flex-center">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
+    <div class="screen">
+        <div class="film">
+            <div class="frame music">
+                <div class="title">mellow</div>
+                <div class="tile">
+                    <a href="mellow-mobile" target="_blank"><img class="flex-img" src="img/music.png" /></a>
+                </div>
             </div>
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-              </div>
+            <div class="frame works">
+                <div class="title">works</div>
+                <div class="tile">
+                    <a href="album?works" target="_blank"><img class="flex-img" src="img/works.png" /></a>
+                </div>
             </div>
-          </div>
+            <div class="frame theater">
+                <div class="title">theater</div>
+                <div class="tile">
+                    <a href="album?theater" target="_blank"><img class="flex-img" src="img/theater.png" /></a>
+                </div>
+            </div>
+            <div class="frame moment">
+                <div class="title">moment</div>
+                <div class="tile">
+                    <a href="album?moment" target="_blank"><img class="flex-img" src="img/moment.png" /></a>
+                </div>
+            </div>
+            <div class="frame daily">
+                <div class="title">daily</div>
+                <div class="tile">
+                    <a href="daily" target="_blank"><img class="flex-img" src="img/daily.png" /></a>
+                </div>
+            </div>
+            <div class="frame clock">
+                <div class="title">time</div>
+                <div class="tile">
+                    <div class="shizhen">
+                        <div class="shizhen_shape"></div>
+                    </div>
+                    <div class="fenzhen">
+                        <div class="fenzhen_shape"></div>
+                    </div>
+                    <div class="miaozhen">
+                        <div class="miaozhen_shape"></div>
+                    </div>
+                    <div>
+                        <img class="flex-img" src="img/clock.png" />
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    
-  </main>
-
-  
-    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
-      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+        <div class="counter">
+            <div class="particle"></div>
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
     </div>
-  </div>
-</div>
-  
+    <script language="javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            var SW = $(window).width();
+            (function () {
+                //初始化宽度
+                $('.film').width(SW * $('.frame').length);
+                $('.frame').width(SW);
+                //初始化滑动粒子
+                var particle = $('.particle').clone();
+                var output = '';
+                for (var i = 0; i < $('.frame').length; i++) {
+                    output += '<div class="particle"></div>';
+                };
+                $('.counter').html(output);
+                $('.particle').eq(0).addClass('particleActive');
+            })();
+            var animating = false;
+            var frame = 0;
+            //向右滑动
+            function swipe52() {
+                frame--;
+                frame = (frame + $('.frame').length) % $('.frame').length;
+                $('.particle').removeClass('particleActive').eq(frame).addClass('particleActive');
+                //
+                var last = $('.frame').last().clone();
+                $('.frame').last().remove();
+                $('.film').prepend(last);
+                $('.film').css('transform', 'translate3d(' + (-SW) + 'px,0,0)');
+                //
+                setTimeout(function () {
+                    $('.film').addClass('anm');
+                    $('.film').css('transform', 'translate3d(' + (0) + 'px,0,0)');
+                    animating = true;
+                }, 10);
+                setTimeout(function () {
+                    $('.film').removeClass('anm');
+                    animating = false;
+                }, 410);
+            };
+            //向左滑动
+            function swipe54() {
+                frame++;
+                frame = (frame + $('.frame').length) % $('.frame').length;
+                $('.particle').removeClass('particleActive').eq(frame).addClass('particleActive');
+                setTimeout(function () {
+                    $('.film').addClass('anm');
+                    $('.film').css('transform', 'translate3d(' + (-SW) + 'px,0,0)');
+                    animating = true;
+                }, 10);
+                setTimeout(function () {
+                    $('.film').removeClass('anm');
+                    //
+                    var first = $('.frame').first().clone();
+                    $('.film').append(first);
+                    $('.frame').first().remove();
+                    $('.film').css('transform', 'translate3d(' + (0) + 'px,0,0)');
+                    animating = false;
+                }, 410);
+            };
+            //更新表盘
+            (function () {
+                var date = new Date();
+                var sec = date.getSeconds();
+                setInterval(function () {
+                    if (frame == 5) {
+                        sec++;
+                        var date = new Date();
+                        //
+                        var h = (date.getHours() + 24) % 24;
+                        h = h + date.getMinutes() / 60;
+                        $('.shizhen').css('transform', 'rotate(' + (h % 12) / 12 * 360 + 'deg)');
+                        //
+                        var m = (date.getMinutes() % 60) / 60 * 360;
+                        if (date.getMinutes() == 0) {
+                            $('.fenzhen').removeClass('anm200').css('transform', 'rotate(' + m + 'deg)');
+                        } else {
+                            if (!$('.fenzhen').hasClass('anm200')) {
+                                $('.fenzhen').addClass('anm200');
+                            };
+                            $('.fenzhen').css('transform', 'rotate(' + m + 'deg)');
+                        };
+                        //
+                        var s = date.getSeconds();
+                        if (s == 0) {
+                            $('.miaozhen').removeClass('anm200').css('transform', 'rotate(' + (s) / 60 * 360 + 'deg)');
+                        } else {
+                            if (!$('.miaozhen').hasClass('anm200')) {
+                                $('.miaozhen').addClass('anm200');
+                            };
+                            $('.miaozhen').css('transform', 'rotate(' + (s) / 60 * 360 + 'deg)');
+                        };
+                    };
+                }, 1000);
+            })();
+            //手势操作
+            (function () {
+                var target = $('.film').get(0);
+                var startY = 0;
+                var startX = 0;
+                var delta = 50;
+                var fired51 = false;
+                var fired52 = false;
+                var fired53 = false;
+                var fired54 = false;
+                var lasthit;
+                target.addEventListener('touchstart', function (e) {
+                    startY = e.touches[0].clientY;
+                    startX = e.touches[0].clientX;
+                    fired51 = fired52 = fired53 = fired54 = false;
+                });
+                target.addEventListener('touchmove', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    var deltaX = e.touches[0].clientX - startX;
+                    var deltaY = e.touches[0].clientY - startY;
+                    if (Math.abs(deltaX) >= Math.abs(deltaY)) {
+                        if (deltaX > delta) {
+                            fired52 = true;
+                        } else {
+                            fired52 = false;
+                        };
+                        if (deltaX < -delta) {
+                            fired54 = true;
+                        } else {
+                            fired54 = false;
+                        };
+                    } else {
+                        if (deltaY > delta) {
+                            fired53 = true;
+                        } else {
+                            fired53 = false;
+                        };
+                        if (deltaY < -delta) {
+                            fired51 = true;
+                        } else {
+                            fired51 = false;
+                        };
+                    }
+                });
+                target.addEventListener('touchend', function (e) {
+                    if (fired51) {
 
-  <footer class="mt-5">
-  <script>
-    var REFERER = document.getElementById('referrer');
-    REFERER && REFERER.setAttribute('content', 'always')
-  </script>
-  <div class="text-center py-3">
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
-    <br>
+                    };
+                    if (fired52) {
+                        if (!animating) {
+                            swipe52();
+                        }
+                    };
+                    if (fired53) {
 
-    
-  
-    <!-- 不蒜子统计PV -->
-    
-    &nbsp;<span id="busuanzi_container_site_pv"></span>总访问量 
-          <span id="busuanzi_value_site_pv"></span> 次&nbsp;
-  
-  
-    <!-- 不蒜子统计UV -->
-    
-    &nbsp;<span id="busuanzi_container_site_uv"></span>总访客数 
-            <span id="busuanzi_value_site_uv"></span> 人&nbsp;
-  
-  <br>
-
-
-
-    
-
-
-    <!-- cnzz Analytics icon -->
-    
-
-  </div>
-</footer>
-
-<!-- SCRIPTS -->
-<script src="/lib/jquery/jquery.min.js" ></script>
-<script src="/lib/popper/popper.min.js" ></script>
-<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
-<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
-<script src="/js/main.js" ></script>
-
-
-
-
-
-
-  <script src="/lib/smoothscroll/SmoothScroll.min.js" ></script>
-
-
-
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-<!-- Plugins -->
-
-
-  
-
-  
-
-  
-
-  
-
-  <!-- cnzz Analytics -->
-  
-
-
-
-  <script src="/lib/prettify/prettify.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      $('pre').addClass('prettyprint  linenums');
-      prettyPrint();
-    })
-  </script>
-
-
-
-  <script src="/lib/typed/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-  <script src="/lib/anchor/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "false",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
-
-
-
-  <script src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      getSearchFile(path);
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
-  <script>
-    $("#post img:not(.no-zoom img, img[no-zoom])").each(
-      function () {
-        var element = document.createElement("a");
-        $(element).attr("data-fancybox", "images");
-        $(element).attr("href", $(this).attr("src"));
-        $(this).wrap(element);
-      }
-    );
-  </script>
-
-
-
-
-
-
-
-
-
-
-
+                    };
+                    if (fired54) {
+                        if (!animating) {
+                            swipe54();
+                        }
+                    };
+                });
+            })();
+        });
+    </script>
 </body>
+
 </html>

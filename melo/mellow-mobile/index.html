@@ -1,332 +1,1755 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-
-
-
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="description" content="">
-  <meta name="author" content="feiyuerenhai">
-  <meta name="keywords" content="">
-  <meta id="referrer" name="referrer" content="no-referrer" />
-  <title>飞越人海</title>
-  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
-<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
-<link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
-<link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css"  >
+    <title>Mellow</title>
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        //主机时间基准+本机时间流长度
+        var time0 = '{time}';
+        time0 = parseInt(time0) * 1000;
+        var time1 = Date.parse(new Date());
+    </script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+        html,
+        body {
+            background: #FFFFFF;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
 
+        .flex-img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
 
+        .invisible {
+            display: none;
+        }
 
-  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
 
-<link rel="stylesheet" href="/css/main.css"  >
+            50% {
+                -webkit-transform: rotate(180deg);
+            }
 
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
 
-  <link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.min.css"  >
+        .anm400 {
+            -webkit-transition: all 400ms ease;
+            transition: all 400ms ease;
+        }
 
+        .blur {
+            /*filter: url(blur.svg#blur);*/
+            -webkit-filter: blur(30px);
+            -moz-filter: blur(30px);
+            -ms-filter: blur(30px);
+            filter: blur(30px);
+            filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=30, MakeShadow=false);
+        }
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+        /*调试信息输出*/
+        #console {
+            position: absolute;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            color: #FFFFFF;
+            font-size: 1rem;
+            display: none;
+        }
+
+        /*toast提示信息*/
+        .toast {
+            position: fixed;
+            width: 100%;
+            height: 3rem;
+            top: 10rem;
+            text-align: center;
+            z-index: 999;
+            display: none;
+            opacity: 0;
+            -webkit-transition: all 400ms ease-out;
+            transition: all 400ms ease-out;
+        }
+
+        .toast .content {
+            position: relative;
+            display: inline;
+            padding: 1rem;
+            top: 1rem;
+            font-size: 1rem;
+            line-height: 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            color: #FFFFFF;
+            border-radius: 0.5rem;
+        }
+
+        /*伪造的动画*/
+        .fakie {
+            background: #FFFFFF;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 9;
+            -webkit-box-shadow: 0px 0px 5px #666666;
+            box-shadow: 0px 0px 5px #666666;
+        }
+
+        .fakie .banner {
+            position: relative;
+            width: 100%;
+        }
+
+        .fakie .loading {
+            width: 2.5rem;
+            height: 2.5rem;
+            bottom: 40%;
+            left: 50%;
+            margin-left: -1.25rem;
+            margin-top: -1.25rem;
+            position: fixed;
+        }
+
+        /*操作引导页面*/
+        .intro {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            background: #FFFFFF;
+            text-align: center;
+        }
+
+        .intro .body {
+            position: relative;
+            margin-top: 5rem;
+        }
+
+        .intro .title {
+            position: relative;
+            font-size: 1.8rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .intro .content {
+            text-align: left;
+            position: relative;
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            color: #787878;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .intro .button {
+            position: relative;
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            color: #007AFF;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        /*基础视图*/
+        .view {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        /*底部播放控制条*/
+        .view_playbar {
+            position: fixed;
+            width: 100%;
+            height: 4rem;
+            left: 0;
+            bottom: 0;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .view_playbar .pic {
+            position: absolute;
+            width: 3.2rem;
+            height: 3.2rem;
+            top: 0.4rem;
+            left: 0.4rem;
+            border-radius: 0.4rem;
+            overflow: hidden;
+        }
+
+        .view_playbar .info {
+            position: relative;
+            height: 2rem;
+            top: 1rem;
+            margin-left: 4rem;
+            margin-right: 3.6rem;
+            overflow: hidden;
+        }
+
+        .view_playbar .title,
+        .view_playbar .artist {
+            font-family: Helvetica, Arial;
+            color: #FFFFFF;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: 0.8rem;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .view_playbar .artist {
+            color: #818181;
+        }
+
+        .view_playbar .play {
+            position: absolute;
+            width: 2.4rem;
+            height: 2.4rem;
+            top: 0.8rem;
+            right: 0.8rem;
+        }
+
+        .view_playbar .pause {
+            position: absolute;
+            width: 2.4rem;
+            height: 2.4rem;
+            top: 0.8rem;
+            right: 0.8rem;
+        }
+
+        .view_playbar .loading {
+            position: absolute;
+            width: 2.4rem;
+            height: 2.4rem;
+            top: 0.8rem;
+            right: 0.8rem;
+            -webkit-animation: spin 0.5s both linear infinite;
+        }
+
+        .view_playbar .radio {
+            position: absolute;
+            width: 2.4rem;
+            height: 2.4rem;
+            top: 0.8rem;
+            right: 0.8rem;
+        }
+
+        .view_playbar .control {
+            position: relative;
+            height: 4em;
+            margin-left: 4rem;
+            margin-right: 3.6rem;
+        }
+
+        .view_playbar .control .progress {
+            height: 4em;
+            position: relative;
+            margin-right: 2rem;
+        }
+
+        .view_playbar .control .bar {
+            position: absolute;
+            width: 100%;
+            height: 0.1rem;
+            left: 0rem;
+            top: 2rem;
+        }
+
+        .view_playbar .control .bar_shape {
+            position: relative;
+            height: 0.1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            background: rgba(139, 37, 132, 0.3);
+        }
+
+        .view_playbar .control .loaded {
+            position: relative;
+            height: 0.1rem;
+            background: #8B2584;
+            -webkit-transition: all 300ms ease;
+            transition: all 300ms ease;
+        }
+
+        .view_playbar .control .dot {
+            position: relative;
+            top: 1rem;
+            left: 0;
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .view_playbar .control .dot_shape {
+            position: absolute;
+            width: 0.6rem;
+            height: 0.6rem;
+            left: 0.7rem;
+            top: 0.75rem;
+            border-radius: 0.6rem;
+            background: #8B2584;
+        }
+
+        /*所有专辑列表页*/
+        .view_main {
+            z-index: 2;
+        }
+
+        #main {
+            width: 100%;
+            min-height: 100%;
+            padding: 0;
+        }
+
+        #main .pic {
+            position: relative;
+            width: 100%;
+            /*display:none;*/
+        }
+
+        #main .banner img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #main .list {
+            position: relative;
+            width: 100%;
+            background: #FFFFFF;
+        }
+
+        #main .item {
+            position: relative;
+            color: #555555;
+            padding-left: 0.7rem;
+            padding-top: 0.7rem;
+            padding-bottom: 0.7rem;
+            border-bottom: 1px solid #DCDFE0;
+        }
+
+        #main .item .cover {
+            position: relative;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 5rem;
+            overflow: hidden;
+        }
+
+        #main .item .center {
+            position: absolute;
+            width: 1.2rem;
+            height: 1.2rem;
+            background: #FFFFFF;
+            border-radius: 1.2rem;
+            border: #222222 0.2rem solid;
+            overflow: hidden;
+            left: 1.7rem;
+            top: 1.7rem;
+        }
+
+        #main .item .title {
+            position: absolute;
+            left: 6.4rem;
+            top: 0.7rem;
+            height: 5rem;
+            line-height: 5rem;
+            font-size: 1.1rem;
+        }
+
+        #main .button {
+            position: absolute;
+            width: 1.4rem;
+            height: 1.4rem;
+            line-height: 1.4rem;
+            right: 0.8rem;
+            top: 2.5rem;
+            text-align: center;
+        }
+
+        /*单张专辑内容列表页*/
+        .view_album {
+            z-index: 2;
+        }
+
+        #album {
+            width: 100%;
+            padding: 0;
+        }
+
+        #album .banner {
+            position: relative;
+            width: 100%;
+        }
+
+        #album .banner img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #album .navnest,
+        .fakie .navnest {
+            position: relative;
+            width: 100%;
+            height: 4.4rem;
+            background: #FFFFFF;
+            border-bottom: 1px solid #E0E0E0;
+            z-index: 9999999;
+        }
+
+        #album .nav,
+        .fakie .nav {
+            position: relative;
+            width: 100%;
+            height: 4.4rem;
+            top: 0;
+            left: 0;
+            background: #FFFFFF;
+            border-bottom: 1px solid #E0E0E0;
+            z-index: 9999999;
+        }
+
+        #album .nav .back,
+        .fakie .nav .back {
+            position: absolute;
+            width: 4.4rem;
+            height: 4.4rem;
+            left: 0rem;
+            top: 0rem;
+            z-index: 1;
+        }
+
+        #album .nav .back img,
+        .fakie .nav .back img {
+            display: block;
+            position: absolute;
+            width: 1.4rem;
+            height: 1.4rem;
+            left: 1.15rem;
+            top: 1.5rem;
+        }
+
+        #album .nav .order,
+        .fakie .nav .order {
+            position: absolute;
+            width: 4.4rem;
+            height: 4.4rem;
+            right: 0rem;
+            top: 0rem;
+            z-index: 1;
+        }
+
+        #album .nav .order img,
+        .fakie .nav .order img {
+            display: block;
+            position: absolute;
+            width: 1.4rem;
+            height: 1.4rem;
+            left: 1.5rem;
+            top: 1.5rem;
+        }
+
+        #album .nav .title,
+        .fakie .nav .title {
+            position: absolute;
+            width: 100%;
+            height: 4rem;
+            font-size: 1rem;
+            line-height: 2.4rem;
+            text-align: center;
+            top: 1rem;
+            text-indent: 0;
+            z-index: 0;
+        }
+
+        #album .list {
+            position: relative;
+            width: 100%;
+            background: #FFFFFF;
+            list-style: none;
+        }
+
+        #album .summary {
+            position: relative;
+            line-height: 1.2rem;
+            font-size: 1rem;
+            padding: 0.8rem;
+            border-bottom: 1px solid #E0E0E0;
+            background: #EFEFF4;
+            text-align: center;
+        }
+
+        #album .item {
+            position: relative;
+            width: 100%;
+            color: #555555;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        #album .item .content {
+            border-left: 0.2rem solid #FFFFFF;
+        }
+
+        #album .item .iactive {
+            /*border-left:0.2rem solid #000000;*/
+        }
+
+        #album .title,
+        #album .artist {
+            font-size: 0.9rem;
+            line-height: 1.2rem;
+            height: 1.2rem;
+            text-indent: 0.8rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 80%;
+        }
+
+        #album .title {
+            font-weight: bold;
+            color: #444444;
+        }
+
+        #album .button {
+            position: absolute;
+            width: 1.4rem;
+            height: 1.4rem;
+            line-height: 1.4rem;
+            right: 1.5rem;
+            top: 1.5rem;
+            text-align: center;
+            z-index: 0;
+        }
+
+        #album .active {
+            position: absolute;
+            width: 1.4rem;
+            height: 1.4rem;
+            background: #FFFFFF;
+            line-height: 1.4rem;
+            right: 1.5rem;
+            top: 1.5rem;
+            text-align: center;
+            z-index: 1;
+        }
+
+        /*单首歌曲歌词页*/
+        .view_lrc {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 120%;
+            overflow: hidden;
+            z-index: 7;
+            font-family: Arial;
+        }
+
+        .view_lrc .title {
+            position: fixed;
+            width: 100%;
+            height: 1rem;
+            line-height: 1rem;
+            left: 0;
+            top: 2rem;
+            text-align: center;
+            color: #9C4896;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            -webkit-transition: all 300ms ease;
+            transition: all 300ms ease;
+            z-index: 1;
+        }
+
+        #lrc {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .lrc-screen {
+            position: absolute;
+            width: 100%;
+            top: 5rem;
+            color: #888888;
+            overflow: hidden;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .lrc-container {
+            -webkit-transition: all 400ms ease-out;
+            transition: all 400ms ease-out;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+            position: absolute;
+            width: 100%;
+            top: 0;
+        }
+
+        .lrc-container li {
+            height: 2rem;
+        }
+
+        .lrc-line-current {
+            color: #FFFFFF;
+        }
+
+        .view_lrc .filter {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .view_lrc .wallpaper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .view_lrc .wallpaper img {
+            display: block;
+            position: relative;
+            width: auto;
+            height: 100%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>飞越人海</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">首页</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">归档</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">分类</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">标签</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">关于</a>
-          </li>
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
+    <audio id="media" src="" title=""></audio>
+    <div id="console"></div>
+    <div class="toast">
+        <div class="content"></div>
     </div>
-  </div>
-</nav>
-
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.png')no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask rgba-black-light flex-center">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
+    <div class="intro invisible">
+        <div class="body">
+            <div class="title">重要的事情说三遍</div>
+            <div class="content">
+                点按黑色的播放条可以进入歌词界面。在歌词界面手指由中心向左长划切换到下一首音乐，向右长划切换到上一首，向上长划重新播放该音乐，向下长划则可以关闭歌词界面，手指两次快速点按可以切换播放和暂停状态。播放音乐会消耗巨大流量，请确保您的手持设备已接入无线网络。
             </div>
-          
+            <div class="button"><span class="tapper">继续</span></div>
         </div>
-      </div>
     </div>
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-              </div>
+    <div class="fakie invisible">
+        <div class="navnest">
+            <div class="nav">
+                <div class="back"><img class="flex-img" src="res/back.png" /></div>
+                <div class="title">加载中</div>
+                <div class="order"><img class="flex-img" src="res/order_all.png" /></div>
             </div>
-          </div>
         </div>
-      </div>
-    
-  </main>
-
-  
-    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
-      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+        <script type="text/javascript">
+            var BANNER_IMG = (function () {
+                var len = 55;
+                var arrs = ('00' + Math.round(Math.random() * len)).split('').reverse();
+                var id = arrs[1] + arrs[0];
+                return 'res/banner/banner_' + id + '.jpg';
+            })()
+            document.write(
+                '<div class="banner"><img class="flex-img" src="' + BANNER_IMG + '" /></div>'
+            )
+        </script>
+        <div class="loading"><img class="flex-img" src="res/loading.gif"></div>
     </div>
-  </div>
-</div>
-  
+    <div class="view view_playbar">
+        <div class="pic"><img class="flex-img" onerror="javascript:this.src='res/default_cover.png';"
+                src="res/default_cover.png" /></div>
+        <div class="control invisible">
+            <div class="bar">
+                <div class="bar_shape">
+                    <div class="loaded"></div>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="dot">
+                    <div class="dot_shape"></div>
+                </div>
+            </div>
+        </div>
+        <div class="info tapper">
+            <div class="title">Mellow</div>
+            <div class="artist">音乐以及生活</div>
+        </div>
+        <div class="play"><img class="flex-img" src="res/play.png" /></div>
+        <div class="pause invisible"><img class="flex-img" src="res/pause.png" /></div>
+        <div class="loading invisible"><img class="flex-img" src="res/loading.png" /></div>
+        <div class="radio invisible"><img class="flex-img" src="res/radio.png" /></div>
+    </div>
+    <div class="view view_main">
+        <div id="main">
+            <script type="text/javascript">
+                document.write(
+                    '<div class="pic"><img class="flex-img" src="' + BANNER_IMG + '" /></div>'
+                )
+            </script>
+            <ul class="list">
+            </ul>
+        </div>
+    </div>
+    <div class="view view_album invisible">
+        <div id="album">
+            <div class="banner"><img class="flex-img" src="" /></div>
+            <div class="navnest">
+                <div class="nav">
+                    <div class="back"><img class="flex-img" src="res/back.png" /></div>
+                    <div class="title tapper"></div>
+                    <div class="order"><img class="flex-img" src="res/order_all.png" /></div>
+                </div>
+            </div>
+            <div class="list">
+            </div>
+        </div>
+    </div>
+    <div class="view view_lrc invisible">
+        <div class="title tapper"></div>
+        <div id="lrc">
+            <div class="lrc-screen"></div>
+            <!-- 启用blur效果会导致title运动紊乱 -->
+            <!-- <div class="filter"></div>
+        <div class="wallpaper blur"><img src="res/banner.jpg"/></div> -->
+        </div>
+    </div>
+    <script language="javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var isWX = window.navigator.userAgent.indexOf('MicroMessenger') >= 0;
+            /*初始化样式与附加功能*/
+            (function () {
+                //调试开关
+                var CONSOLE = false;
+                if (CONSOLE) {
+                    $("#console").css('display', 'block');
+                };
+                //调整首页主图高度
+                var transform = 1.6;
+                $("#main .pic").height($("#main .pic").width() / transform);
+                $('#main').css('padding-bottom', $(".view_playbar").height() + "px");
+                //调整歌词行数高度
+                $('.lrc-screen').height(Math.floor(($(window).height() - 10 * 16) / 32) * 32);
+                //初始化toast及其高度
+                $('.toast').css('top', $(window).height() / 2 - 3 * 16 / 2 + 'px');
+                var itoasting = false;
+                itoast = function (content) {
+                    if (!itoasting) {
+                        $('.toast .content').html(content);
+                        $('.toast').css('display', 'block');
+                        itoasting = true;
+                        setTimeout(function () {
+                            $('.toast').css('opacity', '1');
+                        }, 10);
+                        setTimeout(function () {
+                            $('.toast').css('opacity', '0');
+                        }, 1400);
+                        setTimeout(function () {
+                            $('.toast').css('display', 'none');
+                            itoasting = false;
+                        }, 1800)
+                    } else {
+                        $('.toast .content').html(content);
+                    }
+                };
+                //调整歌词墙纸的呈现方式
+                if ($(window).width() > $(window).height()) {
+                    $('.view_lrc .wallpaper img').css({ 'width': '100%', 'height': 'auto' });
+                } else {
+                    $('.view_lrc .wallpaper img').css({ 'width': 'auto', 'height': '100%' });
+                };
+            })();
+            /*预加载图片防止延迟*/
+            function preloadImg(arr) {
+                var imgs = [];
+                var arr = (typeof arr != "object") ? [arr] : arr;
+                for (var i = 0; i < arr.length; i++) {
+                    imgs[i] = new Image();
+                    imgs[i].src = arr[i];
+                };
+            };
+            preloadImg(['res/banner.jpg', 'res/active.png', 'res/order_all.png', 'res/order_single.png', 'res/order_random.png']);
+            /*监控媒体基本状态*/
+            var isplaying = false;
+            var media = document.getElementById("media");
+            media.addEventListener("loadedmetadata", function (e) {
+                $("#console").html("准备就绪，点我播放");
+            });
+            media.addEventListener("play", function (e) {
+                if (media.duration > 1) {
+                    showMediaState('play');
+                    isplaying = true;
+                } else {
+                    showMediaState('loading');
+                    var si = setInterval(function () {
+                        if (media.duration > 1) {
+                            showMediaState('play');
+                            isplaying = true;
+                            clearInterval(si);
+                        };
+                    }, 200)
+                };
+            });
+            media.addEventListener("pause", function (e) {
+                isplaying = false;
+                if (isAlbumFresh) {
+                    showMediaState('radio');
+                    isAlbumFresh = false;
+                } else {
+                    showMediaState('pause');
+                };
+            });
+            media.addEventListener("waiting", function (e) {
+                showMediaState('loading');
+                isplaying = false;
+            });
+            media.addEventListener("canplay", function (e) {
+                isplaying = true;
+                if (!isplaying) {
+                    showMediaState('pause');
+                } else {
+                    showMediaState('play');
+                };
+            });
+            media.addEventListener("ended", function (e) {
+                itune('auto');
+            });
+            $('.view_playbar .pause').on('click touchend', function (e) {
+                e.preventDefault();
+                media.pause();
+                itoast('暂停');
+            });
+            $('.view_playbar .play').on('click touchend', function (e) {
+                e.preventDefault();
+                if (hasVrUrl) {
+                    media.play();
+                } else {
+                    if (VIEW == 1) {
+                        // carouselody();
+                        // $('#album .list .item').eq(0).trigger('tap');
+                    } else {
+                        itoast('有什么好播的 ?');
+                    };
+                };
+            });
+            $('.view_playbar .radio').on('click touchend', function (e) {
+                e.preventDefault();
+                carouselody();
+            });
+            //错误处理
+            var errnum = 0;
+            media.addEventListener("error", function (e) {
+                errnum++;
+                if (errnum > 4) { } else if (errnum > 1 && errnum <= 4) {
+                    setTimeout(function () {
+                        if (errnum == 4) {
+                            $('.view_lrc .title').html('请检查网络连接');
+                            itoast('出错了');
+                            return;
+                        };
+                        itune('auto');
+                    }, 5000);
+                }
+            });
+            //更新进度
+            var rate = 0;
+            media.addEventListener("timeupdate", function () {
+                if (isplaying) {
+                    var per = parseInt(media.currentTime / media.duration * 100);
+                    rate = per;
+                    $(".dot").css('transform', 'translateX(' + $(".bar_shape").width() * (media.currentTime / media.duration) + 'px)');
+                };
+                var loaded = 1;
+                try {
+                    loaded = media.buffered.end(0) / media.duration;
+                    if (loaded == 0) { loaded = 1; };
+                    //
+                    if ($(".loaded").width() != $(".bar_shape").width()) {
+                        $(".loaded").width(loaded * $(".bar_shape").width());
+                    };
+                } catch (e) {
+                    $(".loaded").width($(".bar_shape").width());
+                };
+            });
+            media.addEventListener("loadeddata", function (e) {
+                media.play();
+                // media.currentTime = parseInt(rate/100*media.duration);
+                var si = setInterval(function () {
+                    if (media.duration > 1) {
+                        if (carouselodie != 0) {
+                            media.currentTime = parseInt(carouselodie / 100 * media.duration);
+                        };
+                        clearInterval(si);
+                    };
+                }, 200);
+            });
+            media.addEventListener("loadstart", function (e) { });
+            media.addEventListener("progress", function (e) { });
+            /*改变播放或暂停状态的按钮外观*/
+            function showMediaState(state) {
+                $('.view_playbar .play').addClass('invisible');
+                $('.view_playbar .pause').addClass('invisible');
+                $('.view_playbar .loading').addClass('invisible');
+                $('.view_playbar .radio').addClass('invisible');
+                switch (state) {
+                    case 'play':
+                        $('.view_playbar .pause').removeClass('invisible');
+                        break;
+                    case 'pause':
+                        $('.view_playbar .play').removeClass('invisible');
+                        break;
+                    case 'loading':
+                        $('.view_playbar .loading').removeClass('invisible');
+                        break;
+                    case 'radio':
+                        $('.view_playbar .radio').removeClass('invisible');
+                        break;
+                }
+            };
+            /*生成主页专辑列表*/
+            (function () {
+                var albums = [{ title: '时光机2016', icon: 'playlist/ShiGuangJi2016_icon.jpg', xml: 'playlist/ShiGuangJi2016.xml', banner: 'playlist/ShiGuangJi2016_banner.jpg' }, { title: '时光机2015', icon: 'playlist/ShiGuangJi2015_icon.jpg', xml: 'playlist/ShiGuangJi2015.xml', banner: 'playlist/ShiGuangJi2015_banner.jpg' }, { title: '时光机2014', icon: 'playlist/ShiGuangJi2014_icon.jpg', xml: 'playlist/ShiGuangJi2014.xml', banner: 'playlist/ShiGuangJi2014_banner.jpg' }, { title: '时光机2013', icon: 'playlist/ShiGuangJi2013_icon.jpg', xml: 'playlist/ShiGuangJi2013.xml', banner: 'playlist/ShiGuangJi2013_banner.jpg' }, { title: '你是我的骄傲', icon: 'playlist/NiShiWoDeJiaoAo_icon.jpg', xml: 'playlist/NiShiWoDeJiaoAo.xml', banner: 'playlist/NiShiWoDeJiaoAo_banner.jpg' }, { title: '无与伦比', icon: 'playlist/WuYuLunBi_icon.jpg', xml: 'playlist/WuYuLunBi.xml', banner: 'playlist/WuYuLunBi_banner.jpg' }, { title: '班得瑞精选集', icon: 'playlist/BanDeRuiJingXuanJi_icon.jpg', xml: 'playlist/BanDeRuiJingXuanJi.xml', banner: 'playlist/BanDeRuiJingXuanJi_banner.jpg' }, { title: '我们的歌', icon: 'playlist/WoMenDeGe_icon.jpg', xml: 'playlist/WoMenDeGe.xml', banner: 'playlist/WoMenDeGe_banner.jpg' }];
+                var output = '';
+                for (var i = 0; i < albums.length; i++) {
+                    output += '<div class="item tapper" data-xml="' + albums[i].xml + '" data-pic="' + albums[i].banner + '"><div class="cover"><div class="center"></div><img class="flex-img" src="' + albums[i].icon + '"/></div><div class="title">' + albums[i].title + '</div><div class="button"><img class="flex-img" src="res/into.png"/></div></div>';
+                };
+                $('#main .list').html(output);
+            })();
+            /*点击一张专辑*/
+            // var token = '21.4812434e38b151ee61047532c9c4fff3.2592000.1452041165.4178865552-1582181';
+            var token = '{token}';
+            var tracks = [];
+            var lens = 0;
+            var listID;
+            $(document).on('tap', '#main .list .tapper', function (e) {
+                e.stopPropagation();
+                var xml = $(e.target).closest('.item').data('xml');
+                var pic = $(e.target).closest('.item').data('pic');
+                var title = $(e.target).closest('.item').find('.title').text();
+                easyAnm('.fakie', '25', 'anm400', function () {
+                    $('.fakie').css('background', '#FFFFFF');
+                    if (isWX) {
+                        $('.fakie .navnest').css('display', 'block');
+                    };
+                    $('.fakie .banner img').attr('src', pic);
+                }, function () {
+                    changeView(1);
+                    loadAlbum(xml, pic, title);
+                });
+                //history导航
+                // if(history && !isHsAdded){
+                //  history.pushState({}, '', '?p=v');
+                //  isHsAdded = true;
+                // };
+                listID = $('#main .list .tapper').index($(this));
+                // if(history && isHsAdded && window.location.search==''){
+                //  history.forward();
+                // };
+            });
+            /*加载专辑列表*/
+            var dir = '';
+            var isAlbumFresh = false;
+            var cacheList = [];
 
-  <footer class="mt-5">
-  <script>
-    var REFERER = document.getElementById('referrer');
-    REFERER && REFERER.setAttribute('content', 'always')
-  </script>
-  <div class="text-center py-3">
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
-    <br>
+            function loadAlbum(url, pic, title) {
+                $('#album .nav .title').text(title);
+                //整理专辑封面
+                $('#album .banner img').attr('src', pic);
+                var transform = 2;
+                $("#album .banner").height($("#album .banner").width() / transform);
+                $('#album').css('padding-bottom', $(".view_playbar").height() + "px");
+                $('#album .list').css('min-height', $(window).height() - $('#album .banner').height() - 4.4 * 16);
+                //读取缓存
+                if (cacheList[url]) {
+                    tracks = cacheList[url];
+                    dir = cacheList[url + '_dir'];
+                    //
+                    isAlbumFresh = true;
+                    resetPlayBar();
+                    $('body').scrollTop(0);
+                    count = tracks.length - 1;
+                    renderList(tracks);
+                    //
+                    return;
+                };
+                //加载专辑内容
+                $.ajax({
+                    url: url + '?r=' + Math.random(),
+                    type: 'get',
+                    dataType: 'xml',
+                    data: null,
+                    success: function (xml) {
+                        isAlbumFresh = true;
+                        //重新设置播放条内容
+                        resetPlayBar();
+                        $('body').scrollTop(0);
+                        //
+                        dir = $(xml).find('playlist').eq(0).attr('directory');
+                        dir = dir.replace(/\&amp\;/g, '&');
+                        dir = dir.replace('BAIDU_PSC_TOKEN', token);
+                        tracks = [];
+                        lens = 0;
+                        var xml = $(xml).find("track");
+                        for (var i = 0; i < $(xml).length; i++) {
+                            var o = {};
+                            $(xml).eq(i).attr('summary') ? o.summary = $(xml).eq(i).attr('summary') : null;
+                            o.title = $(xml).eq(i).find('title').text();
+                            o.artist = $(xml).eq(i).find('artist').text();
+                            o.album = $(xml).eq(i).find('album').text();
+                            o.id = $(xml).eq(i).find('id').text();
+                            var len = parseInt($(xml).eq(i).find('length').text()) || 0;
+                            o.length = len;
+                            lens += len;
+                            tracks.push(o);
+                        };
+                        count = tracks.length - 1;
+                        renderList(tracks);
+                        //在内存中缓存列表数据
+                        cacheList[url] = tracks;
+                        cacheList[url + '_dir'] = dir;
+                        //首次进行操作提示
+                        intro();
+                    },
+                    error: function () {
+                        $("#console").html("列表加载失败");
+                    }
+                })
+            };
+            /*复位播放条*/
+            var hasVrUrl = false;
 
-    
-  
-    <!-- 不蒜子统计PV -->
-    
-    &nbsp;<span id="busuanzi_container_site_pv"></span>总访问量 
-          <span id="busuanzi_value_site_pv"></span> 次&nbsp;
-  
-  
-    <!-- 不蒜子统计UV -->
-    
-    &nbsp;<span id="busuanzi_container_site_uv"></span>总访客数 
-            <span id="busuanzi_value_site_uv"></span> 人&nbsp;
-  
-  <br>
+            function resetPlayBar() {
+                if (isplaying) {
+                    media.pause();
+                } else {
+                    showMediaState('radio');
+                    isAlbumFresh = false;
+                };
+                hasVrUrl = false;
+                $('.view_playbar .info .title').html('Music24 音乐台');
+                $('.view_playbar .info .artist').html('24小时轮播电台 聆听心声');
+                $('.view_playbar .pic img').attr('src', 'res/default_cover.png');
+            };
+            /*生成专辑列表*/
+            function renderList(tracks) {
+                $('#album .list').empty();
+                var output = '';
+                for (var i = 0; i < tracks.length; i++) {
+                    var t = tracks[i].artist.split(';');
+                    tracks[i].artist = $.trim(t[0]);
+                    output += (tracks[i].summary ? '<div class="summary">' + tracks[i].summary + '</div>' : '') + '<li class="item tapper" data-count="' + i + '" data-id="' + tracks[i].id + '"><div class="content"><div class="title">' + tracks[i].title + '</div><div class="artist">' + (tracks[i].artist.length > 0 ? tracks[i].artist : '未知') + (tracks[i].album.length > 0 ? ' / ' + tracks[i].album : '') + '</div></div><div class="button"><img class="flex-img" src="res/music.png"/></div><div class="active invisible"><img class="flex-img" src="res/active.png"/></div></li>';
+                };
+                $('#album .list').append(output);
+                easyAnmOut('.fakie');
+                //
+                if (!isWX) {
+                    $('#album .nav').css('position', 'relative');
+                }
+            };
+            /*音乐轮播模式*/
+            var carouselodie = 0;
 
+            function carouselody() {
+                //固定轮播开始时间
+                var start = 6,
+                    time2 = Date.parse(new Date()),
+                    now = new Date(time2 - time1 + time0);
+                start = parseInt((lens / 3600) / 24) * 24 + start;
+                //通知
+                var moment = now.getHours();
+                if (moment >= 5 && moment < 8) {
+                    itoast('Music24 早间电台');
+                } else if (moment >= 8 && moment < 13) {
+                    itoast('Music24 上午电台');
+                } else if (moment >= 13 && moment < 18) {
+                    itoast('Music24 下午电台');
+                } else if (moment >= 18 && moment < 24) {
+                    itoast('Music24 晚间电台');
+                } else {
+                    itoast('Music24 午夜电台');
+                };
+                //时间差为当前时间减去开始时间模上专辑总时间
+                var gap = ((24 + moment - start) % 24) * 60 * 60 + now.getMinutes() * 60 + now.getSeconds();
+                gap = gap % lens;
+                //两个计数器：ct1记录计时总长度；ct2记录被点到的第N个曲目
+                var ct1 = 0,
+                    ct2 = 0;
+                for (var i = 0; i < tracks.length; i++) {
+                    if (ct1 > gap) {
+                        ct1 = ct1 - tracks[ct2].length;
+                        break;
+                    } else {
+                        ct1 += tracks[i].length;
+                        ct2 = i;
+                    };
+                };
+                $('#album .list .item').eq(ct2).trigger('tap');
+                carouselodie = parseInt(100 * (gap - ct1) / tracks[ct2].length);
+            };
+            $(document).on('click', '#album .banner', function () {
+                // carouselody();
+            });
+            /*更改播放顺序*/
+            var PLAYORDER = 'all';
+            (function () {
+                var i = 0;
+                var order = ['res/order_all.png', 'res/order_single.png', 'res/order_random.png'];
+                $('#album .order').on('touchend', function () {
+                    i++;
+                    i = i % order.length;
+                    $('#album .order img').attr('src', order[i]);
+                    switch (i) {
+                        case 0:
+                            PLAYORDER = 'all';
+                            itoast('全部播放');
+                            break;
+                        case 1:
+                            PLAYORDER = 'single';
+                            itoast('单曲循环');
+                            break;
+                        case 2:
+                            PLAYORDER = 'random';
+                            itoast('随机播放');
+                            break;
+                    };
+                });
+            })();
+            /*滚动时nav变成fixed*/
+            if (isWX) {
+                $('#album .navnest').insertBefore('#album .banner');
+                $('#album .nav').css('position', 'fixed');
+                $(document).on('scroll', function (e) {
+                    vertPos = $('body').scrollTop();
+                });
+            } else {
+                $('.fakie .navnest').css('display', 'none');
+                $(document).on('scroll', function (e) {
+                    vertPos = $('body').scrollTop();
+                    if (VIEW == 1) {
+                        if ($('body').scrollTop() > $('#album .navnest').offset().top) {
+                            $('#album .nav').css('position', 'fixed');
+                        } else {
+                            $('#album .nav').css('position', 'relative');
+                        };
+                    };
+                });
+            };
+            // $(document).on('scroll',function(e){
+            //  if(VIEW==1){
+            //      if($('body').scrollTop()>$('#album .navnest').offset().top){
+            //          $('#album .nav').css('position', 'fixed');
+            //      }else{
+            //          $('#album .nav').css('position', 'relative');
+            //      };
+            //  };
+            // });
+            /*点击列表中的一首歌曲*/
+            var count = 0;
+            $(document).on('tap', '#album .list .tapper', function (e) {
+                media.pause();
+                showMediaState('loading');
+                //
+                $('#album .item .content').removeClass('iactive');
+                $(e.target).closest('.item').find('.content').addClass('iactive');
+                $('#album .item .active').addClass('invisible');
+                $(e.target).closest('.item').find('.active').removeClass('invisible');
+                dataid = $(e.target).closest('.item').data('id');
+                var title = $(e.target).closest('.item').find('.title').text();
+                var artist = $(e.target).closest('.item').find('.artist').text();
+                //
+                if (dataid == '') {
+                    dataid = encodeURI(title);
+                };
+                //
+                $('.view_playbar .info .title').html(title);
+                $('.view_playbar .info .artist').html(artist);
+                imusic(dataid);
+                count = $(e.target).closest('.item').data('count');
+                //
+                var start, end;
+                if (itune_flag == 'next') {
+                    start = 'translateX(-80px)';
+                    end = 'translateX(80px)';
+                } else if (itune_flag == 'prev') {
+                    start = 'translateX(80px)';
+                    end = 'translateX(-80px)';
+                };
+                $('.view_lrc .title').css({ 'opacity': '0', 'transform': start });
+                setTimeout(function () {
+                    $('.view_lrc .title').css({ 'opacity': '0', 'transform': end });
+                }, 300);
+                setTimeout(function () {
+                    $('.view_lrc .title').html((count + 1) + '. ' + title);
+                    $('.view_lrc .title').css({ 'opacity': '1', 'transform': 'translateX(0)' });
+                }, 600);
+            });
+            /*播放一首歌曲并显示歌词*/
+            var lrc;
+            var lrctimer;
 
+            function imusic(dataid) {
+                //重置
+                $(".loaded").width(0);
+                $(".dot").addClass('anm400');
+                $(".dot").css('transform', 'translateX(0px)');
+                setTimeout(function () {
+                    $(".dot").removeClass('anm400');
+                }, 500);
+                //播放音频
+                var url = dir + dataid + '.mp3';
+                $('#media').attr('src', url);
+                hasVrUrl = true;
+                rate = carouselodie = 0;
+                media.load();
+                //歌曲封面
+                // reserr(dir+dataid+'.jpg',
+                //  function(){
+                //      $('.view_playbar .pic img').attr('src',dir+dataid+'_.jpg');
+                //      $('.view_lrc .wallpaper img').attr('src',dir+dataid+'_.jpg');
+                //  },function(){
+                //      $('.view_playbar .pic img').attr('src','res/default_cover.png');
+                //      $('.view_lrc .wallpaper img').attr('src','');
+                // });
+                $('.view_playbar .pic img').attr('src', dir + dataid + '_.jpg');
+                //显示歌词
+                lrc = null;
+                lrc = new LRC(dir + dataid + '.lrc', '.lrc-screen');
+                if (typeof (lrctimer) != 'undefined') {
+                    clearInterval(lrctimer);
+                };
+                var tick = 100;
+                var count = 0;
+                var time = 0;
+                lrctimer = setInterval(function () {
+                    if (isplaying && !!lrc.ready()) {
+                        if (count == 0) {
+                            time = media.currentTime;
+                        } else if (count >= 10) {
+                            //每秒钟重新获取一次当前进度修正
+                            count = 1;
+                            time = media.currentTime
+                        } else {
+                            time += tick / 1000;
+                        };
+                        count++;
+                        //更新歌词
+                        lrc.refresh(time);
+                    };
+                }, tick);
+            };
+            /*接下来要播放什么*/
+            var itune_flag = '';
 
-    
+            function itune(cmd) {
+                itune_flag = 'next';
+                if (cmd == 'prev') {
+                    count--;
+                    count = (count + tracks.length) % tracks.length;
+                    itune_flag = 'prev';
+                } else if (cmd == 'next') {
+                    switch (PLAYORDER) {
+                        case 'all':
+                            count++;
+                            count = count % tracks.length;
+                            break;
+                        case 'single':
+                            count++;
+                            count = count % tracks.length;
+                            break;
+                        case 'random':
+                            count = Math.floor(tracks.length * Math.random());
+                            break;
+                    };
+                } else if (cmd == 'auto') {
+                    switch (PLAYORDER) {
+                        case 'all':
+                            count++;
+                            count = count % tracks.length;
+                            break;
+                        case 'single':
+                            media.play();
+                            return;
+                            break;
+                        case 'random':
+                            count = Math.floor(tracks.length * Math.random());
+                            break;
+                    };
+                };
+                $('#album .list .item').eq(count).trigger('tap');
+            };
+            /*返回主界面*/
+            $('#album .nav .back').on('click', function (e) {
+                if (isWX) {
+                    $('.fakie .navnest').css('display', 'none');
+                };
+                easyAnm('.fakie', '45', 'anm400', function () {
+                    $('.fakie').css('background', '#FFFFFF');
+                    $('.fakie .banner img').attr('src', BANNER_IMG);
+                }, function () {
+                    changeView(0);
+                    easyAnmOut('.fakie');
+                    if (!hasVrUrl) {
+                        showMediaState('pause');
+                        $('.view_playbar .info .title').html('Mellow');
+                        $('.view_playbar .info .artist').html('音乐以及生活');
+                        $('.view_playbar .pic img').attr('src', 'res/default_cover.png');
+                    };
+                });
+                //history导航
+                // if(history && window.location.search!=''){
+                //  history.back();
+                // };
+            });
+            /*侦听history*/
+            var isHsAdded = false;
+            var vertPos = 0;
+            if (false && 'onpopstate' in window && window.history) {
+                window.onpopstate = function (e) {
+                    if (!isHsAdded) {
+                        return;
+                    };
+                    $('body').scrollTop(vertPos);
+                    if (lrcOn) {
+                        hidelrc();
+                    };
+                    if (window.location.search == '') {
+                        setTimeout(function () {
+                            $('body').scrollTop(vertPos);
+                            $('#album .nav .back').trigger('touchend');
+                        }, 0);
+                    } else {
+                        setTimeout(function () {
+                            $('body').scrollTop(vertPos);
+                            $('#main .list .tapper').eq(listID).trigger('tap');
+                        }, 0);
+                    };
+                };
+            };
+            /*列表回滚到第一行*/
+            $('#album .nav .tapper').on('tap', function (e) {
+                if ($('body').scrollTop() > $('#album .banner').height()) {
+                    $('body').animate({ 'scrollTop': $('#album .banner').height() + 'px' }, 'normal');
+                };
+            });
+            /*视图主控函数*/
+            window.VIEW = 0;
 
+            function changeView(V) {
+                $('body').scrollTop(0);
+                $('.view').addClass('invisible');
+                $('.view_playbar').removeClass('invisible');
+                window.VIEW = V;
+                switch (window.VIEW) {
+                    case 0:
+                        //主界面
+                        $(".view_main").removeClass('invisible');
+                        break;
+                    case 1:
+                        //单张专辑界面
+                        $(".view_album").removeClass('invisible');
+                        if (!isWX) {
+                            $('#album .nav').css('position', 'relative');
+                        };
+                        break;
+                };
+            };
+            /*显示与隐藏全屏幕的歌词*/
+            $(".view_lrc").addClass('invisible');
+            var ScrollTop = 0;
+            var lrcOn = false;
 
-    <!-- cnzz Analytics icon -->
-    
+            function showlrc() {
+                ScrollTop = $("body").scrollTop();
+                easyAnm('.view_lrc', '35', 'anm400', function () {
+                    $('.view_lrc').css('background', '#282832');
+                }, function () {
+                    $('.view_lrc').removeClass('invisible');
+                    $('.view_playbar .info').addClass('invisible');
+                    $('.view_playbar .control').removeClass('invisible');
+                    lrcOn = true;
+                });
+            };
 
-  </div>
-</footer>
+            function hidelrc() {
+                easyAnm('.view_lrc', '53', 'anm400', function () {
+                    // changeView(1);
+                    $("body").scrollTop(ScrollTop);
+                }, function () {
+                    $('.view_lrc').addClass('invisible');
+                    //
+                    $('.view_playbar .info').removeClass('invisible');
+                    $('.view_playbar .control').addClass('invisible');
+                    lrcOn = false;
+                });
+            };
+            $(".view_playbar .tapper").on('tap', function (e) {
+                e.preventDefault();
+                if (window.VIEW == 0 || window.VIEW == 1) {
+                    showlrc();
+                };
+            });
+            $(".view_lrc .tapper").on('tap', function (e) {
+                e.preventDefault();
+                hidelrc();
+            });
+            /*歌词界面基础手势操作*/
+            (function () {
+                var view_lrc = $('.view_lrc').get(0);
+                var startY = 0;
+                var startX = 0;
+                var delta = 150;
+                var fired51 = false;
+                var fired52 = false;
+                var fired53 = false;
+                var fired54 = false;
+                var lasthit;
+                view_lrc.addEventListener('touchstart', function (e) {
+                    startY = e.touches[0].clientY;
+                    startX = e.touches[0].clientX;
+                    fired51 = fired52 = fired53 = fired54 = false;
+                });
+                view_lrc.addEventListener('touchmove', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    var deltaX = e.touches[0].clientX - startX;
+                    var deltaY = e.touches[0].clientY - startY;
+                    if (Math.abs(deltaX) >= Math.abs(deltaY)) {
+                        if (deltaX > delta) {
+                            fired52 = true;
+                        } else {
+                            fired52 = false;
+                        };
+                        if (deltaX < -delta) {
+                            fired54 = true;
+                        } else {
+                            fired54 = false;
+                        };
+                    } else {
+                        if (deltaY > delta) {
+                            fired53 = true;
+                        } else {
+                            fired53 = false;
+                        };
+                        if (deltaY < -delta) {
+                            fired51 = true;
+                        } else {
+                            fired51 = false;
+                        };
+                    }
+                });
+                view_lrc.addEventListener('touchend', function (e) {
+                    if (fired51) {
+                        media.pause();
+                        media.currentTime = 0;
+                        $(".dot").addClass('anm400');
+                        $(".dot").css('transform', 'translateX(0px)');
+                        setTimeout(function () {
+                            $(".dot").removeClass('anm400');
+                            media.play();
+                        }, 500);
+                    };
+                    if (fired52) {
+                        itune('prev');
+                    };
+                    if (fired53) {
+                        hidelrc();
+                    };
+                    if (fired54) {
+                        itune('next');
+                    };
+                    //双击事件
+                    if (lasthit && e.timeStamp - lasthit < 500) {
+                        if (isplaying) {
+                            media.pause();
+                            itoast('暂停');
+                        } else {
+                            media.play();
+                        }
+                    };
+                    lasthit = e.timeStamp;
+                });
+            })();
+            /*拖动播放按钮*/
+            (function () {
+                //需要全局变量rate
+                var dot = $(".view_playbar .dot").get(0);
+                var o_x, o_y;
+                var gap = 0;
+                var iscontroling = false;
+                dot.addEventListener("touchstart", function (e) {
+                    e.preventDefault();
+                    iscontroling = true;
+                    media.pause();
+                    o_x = parseInt(e.touches[0].clientX);
+                    o_y = parseInt(e.touches[0].clientY);
+                    gap = 0;
+                });
+                dot.addEventListener("touchmove", function (e) {
+                    e.preventDefault();
+                    gap = Math.round((parseInt(e.touches[0].clientX) - o_x) / parseInt($(".bar").width()) * 100);
+                    if ((rate + gap) >= 0 && (rate + gap) <= 100) {
+                        $("#console").html((gap + rate) + "%");
+                        $(dot).css('transform', 'translateX(' + $(".bar_shape").width() * (gap + rate) / 100 + 'px)');
+                    };
+                });
+                dot.addEventListener("touchend", function (e) {
+                    e.preventDefault();
+                    iscontroling = false;
+                    rate = rate + gap;
+                    media.currentTime = parseInt(rate / 100 * media.duration);
+                    if (!!lrc.ready()) {
+                        var lastline = '0';
+                        for (var o in lrc.getData()) {
+                            $("#console").html(o);
+                            if (parseFloat(o) - media.currentTime.toFixed(1) > 0) {
+                                lrc.refresh(parseFloat(lastline));
+                                break;
+                            } else {
+                                lastline = o;
+                            };
+                        };
+                    };
+                    media.play();
+                });
+            })();
+            /*加载与显示歌词类*/
+            var LRC = function (url, box) {
+                var self = this;
+                $(box).empty();
+                var LRCReady = false;
+                var LRCData = {};
+                var register = '';
+                if (typeof (LRCAjax) != 'undefined') {
+                    LRCAjax.abort();
+                };
+                LRCAjax = $.ajax({
+                    url: 'res/proxy.php',
+                    type: 'post',
+                    dataType: 'text',
+                    data: { url: url },
+                    success: function (raw) {
+                        if (raw == '') { } else { };
+                        LRCData = self.decode(raw);
+                        LRCReady = true;
+                        self.createDOM(LRCData);
+                        $(".lrc-container").css('transform', 'translate3D(0px, 0px, 0px)');
+                    },
+                    error: function () { }
+                })
+                this.decode = function (raw) {
+                    var output = {};
+                    var reg = /\[[0-5][0-9]:[0-5][0-9](.*?)\]/g;
+                    var dat = raw.split('\n');
+                    var digit = raw.lastIndexOf(']') - raw.lastIndexOf('[') + 1;
+                    var counter = 0;
+                    var LRCarr = new Array();
+                    for (var i = 0; i < dat.length; i++) {
+                        var line = dat[i];
+                        if (line == "" || line.match(reg) == null) {
+                            continue;
+                        };
+                        var flags = line.match(reg);
+                        var lyric = line.substr(flags.length * digit);
+                        for (var k = 0; k < flags.length; k++) {
+                            var obj = {};
+                            var flag = flags[k];
+                            var time = parseFloat(flag.substr(1, 2)) * 60 + parseFloat(flag.substr(4, 5));
+                            obj.lyric = lyric.replace("\r", "");
+                            obj.time = String(time.toFixed(1));
+                            register += '|' + obj.time + '|';
+                            LRCarr.push(obj);
+                            counter++;
+                        };
+                    };
+                    LRCarr.sort(function (a, b) {
+                        var p = parseFloat(a.time) - parseFloat(b.time);
+                        if (p > 0) {
+                            return 1;
+                        } else if (p < 0) {
+                            return -1;
+                        } else {
+                            return 0;
+                        };
+                    });
+                    for (var i = 0; i < LRCarr.length; i++) {
+                        output[LRCarr[i].time] = { lyric: LRCarr[i].lyric, count: i };
+                    };
+                    if (LRCarr.length == 0) {
+                        output['0.0'] = { count: counter, lyric: "no lyrics" };
+                    } else {
+                        output['9999.0'] = { count: counter, lyric: "" };
+                    };
+                    return output;
+                };
+                this.getData = function () {
+                    return LRCData;
+                };
+                this.ready = function () {
+                    return LRCReady;
+                };
+                this.createDOM = function (data) {
+                    var ul = "<ul class='lrc-container'>";
+                    for (k in data) {
+                        ul += "<li class='lrc-line'>" + data[k].lyric + "</li>";
+                    };
+                    ul += "</ul>";
+                    $(box).html(ul);
+                    $(".lrc-container").css('transform', 'translate3D(0px, 0px, 0px)');
+                };
+                this.refresh = this.refreshDOM = function (time) {
+                    var t = time.toFixed(1);
+                    if (LRCReady && register.indexOf('|' + t + '|') > 0) {
+                        var count = LRCData[t].count;
+                        $(".lrc-line").removeClass('lrc-line-current');
+                        $(".lrc-line").eq(count).addClass('lrc-line-current');
+                        if (count > 5) {
+                            var y = $(".lrc-line").eq(0).height() * count - $(".lrc-screen").height() / 2;
+                            $(".lrc-container").css('transform', 'translate3D(0px, ' + (-y) + 'px, 0px)');
+                        } else {
+                            $(".lrc-container").css('transform', 'translate3D(0px, 0px, 0px)');
+                        };
+                    }
+                };
+            };
+            /*加入某个资源空白或者不可用的备用方案*/
+            function reserr(url, success, fail) {
+                $(document).load(url, function (responseTxt, statusTxt, xhr) {
+                    if (statusTxt == "success")
+                        success();
+                    if (statusTxt == "error")
+                        fail();
+                });
+            };
+            /*区别手指单击而非滑动碰触事件*/
+            (function () {
+                var touchmoved = false;
+                var timeout;
+                $(document).on('mousedown touchstart', '.tapper', function (e) {
+                    touchmoved = false;
+                });
+                $(document).on('mousemove touchmove', '.tapper', function (e) {
+                    touchmoved = true;
+                });
+                $(document).on('mouseup touchend', '.tapper', function (e) {
+                    e.preventDefault();
+                    if (!touchmoved) {
+                        $(e.target).trigger('tap');
+                    }
+                });
+            })();
+            /*控制伪装动画*/
+            function easyAnm(target, dir, anm, prepare, callback) {
+                prepare();
+                //将屏幕上右下左中分别定义为12345，不同的组合即是不同的动画方向
+                var scrw = $('body').width();
+                var scrh = $('body').height();
+                var start, end;
+                if (dir == '45') {
+                    start = { 'transform': 'translate3d(' + (-scrw) + 'px,0,0)', 'opacity': '0' };
+                    end = { 'transform': 'translate3d(0,0,0)', 'opacity': '1' };
+                } else if (dir == '25') {
+                    start = { 'transform': 'translate3d(' + (scrw) + 'px,0,0)', 'opacity': '0' };
+                    end = { 'transform': 'translate3d(0,0,0)', 'opacity': '1' };
+                } else if (dir == '35') {
+                    start = { 'transform': 'translate3d(0,' + (scrh) + 'px,0)', 'opacity': '0' };
+                    end = { 'transform': 'translate3d(0,0,0)', 'opacity': '1' };
+                } else if (dir == '51') {
+                    start = { 'transform': 'translate3d(0,0,0)', 'opacity': '1' };
+                    end = { 'transform': 'translate3d(0,' + (-scrh) + 'px,0)', 'opacity': '1' };
+                } else if (dir == '53') {
+                    start = { 'transform': 'translate3d(0,0,0)', 'opacity': '1' };
+                    end = { 'transform': 'translate3d(0,' + scrh + 'px,0)', 'opacity': '1' };
+                };
+                $(target).removeClass('invisible');
+                $(target).css(start);
+                setTimeout(function () {
+                    $(target).addClass(anm);
+                    $(target).css(end);
+                }, 10);
+                setTimeout(function () {
+                    $(target).removeClass(anm);
+                    $(target).css({ 'transform': 'translate3d(0,0,0)', 'opacity': '1' });
+                    //$(target).addClass('invisible');
+                    callback();
+                }, 410);
+            };
 
-<!-- SCRIPTS -->
-<script src="/lib/jquery/jquery.min.js" ></script>
-<script src="/lib/popper/popper.min.js" ></script>
-<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
-<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
-<script src="/js/main.js" ></script>
+            function easyAnmOut(target) {
+                $(target).css({ 'opacity': '1' });
+                setTimeout(function () {
+                    $(target).addClass('anm400');
+                    $(target).css({ 'opacity': '0' });
+                }, 10);
+                setTimeout(function () {
+                    $(target).removeClass('anm400');
+                    $(target).addClass('invisible')
+                }, 410);
+            };
+            /*首次播放歌曲将进行操作提示*/
+            var intro_fired = false;
 
-
-
-
-
-
-  <script src="/lib/smoothscroll/SmoothScroll.min.js" ></script>
-
-
-
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-<!-- Plugins -->
-
-
-  
-
-  
-
-  
-
-  
-
-  <!-- cnzz Analytics -->
-  
-
-
-
-  <script src="/lib/prettify/prettify.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      $('pre').addClass('prettyprint  linenums');
-      prettyPrint();
-    })
-  </script>
-
-
-
-  <script src="/lib/typed/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-
-  <script src="/lib/anchor/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "false",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
-
-
-
-  <script src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      getSearchFile(path);
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script src="/lib/fancybox/jquery.fancybox.min.js" ></script>
-  <script>
-    $("#post img:not(.no-zoom img, img[no-zoom])").each(
-      function () {
-        var element = document.createElement("a");
-        $(element).attr("data-fancybox", "images");
-        $(element).attr("href", $(this).attr("src"));
-        $(this).wrap(element);
-      }
-    );
-  </script>
-
-
-
-
-
-
-
-
-
-
-
+            function intro() {
+                var lsid = 'tip0050';
+                if (!intro_fired && window.localStorage) {
+                    if (!localStorage.getItem(lsid)) {
+                        localStorage.setItem(lsid, 0);
+                    };
+                    if (localStorage.getItem(lsid) > 2) {
+                        return;
+                    };
+                    intro_fired = true;
+                    setTimeout(function () {
+                        $('.intro').removeClass('invisible');
+                        $('.intro .body').css('margin-top', $(window).height() / 2 - $('.intro .body').height() / 2 - 16 + 'px');
+                        easyAnm('.intro', '35', 'anm400', function () { }, function () {
+                            $('.view').addClass('invisible')
+                        });
+                    }, 500);
+                    $('.intro .tapper').on('tap', function (event) {
+                        localStorage.setItem(lsid, parseInt(localStorage.getItem(lsid)) + 1);
+                        changeView(window.VIEW);
+                        easyAnm('.intro', '51', 'anm400', function () { }, function () {
+                            $('.intro').addClass('invisible');
+                        });
+                    });
+                };
+            };
+        })
+    </script>
 </body>
+
 </html>
