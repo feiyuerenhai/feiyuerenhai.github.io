@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="gb2312"?>
+<playlist update="2014/1/1" prior="0">
+  <!--追加时间：2014年01月01日-->
+  <item>
+    <name>Angel</name>
+    <artist>Eric Clapton</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FAngel.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>Autumn Leaves</name>
+    <artist>Eric Clapton</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FAutumn%20Leaves.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/10/16110.xml</lyric>
+  </item>
+  <item>
+    <name>close to you</name>
+    <artist>The Carpenters</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2Fclose%20to%20you.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/72/417072.xml</lyric>
+  </item>
+  <item>
+    <name>Dont Know Why</name>
+    <artist>Norah Jones</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FDont%20Know%20Why.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/13/24813.xml</lyric>
+  </item>
+  <item>
+    <name>Dream A Little Dream</name>
+    <artist>Michael Buble</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FDream%20A%20Little%20Dream.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/67/483967.xml</lyric>
+  </item>
+  <item>
+    <name>I Love You</name>
+    <artist>Sarah McLachlan</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FI%20Love%20You(Sarah%20McLachlan).mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>I Love You</name>
+    <artist>王若琳</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FI%20Love%20You(%E7%8E%8B%E8%8B%A5%E7%90%B3).mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/19/414119.xml</lyric>
+  </item>
+  <item>
+    <name>ItS Probably Me</name>
+    <artist>Sting</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FItS%20Probably%20Me.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/74/321274.xml</lyric>
+  </item>
+  <item>
+    <name>Knocking On Heavens Door</name>
+    <artist>Eric Clapton</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FKnocking%20On%20Heavens%20Door.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/67/167467.xml</lyric>
+  </item>
+  <item>
+    <name>Leave The Light On</name>
+    <artist>Priscilla Ahn</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FLeave%20The%20Light%20On.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/62/2219362.xml</lyric>
+  </item>
+  <item>
+    <name>Let It Snow</name>
+    <artist>George Strait</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FLet%20It%20Snow.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/64/453564.xml</lyric>
+  </item>
+  <item>
+    <name>Lets Start From Here</name>
+    <artist>王若琳</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FLets%20Start%20From%20Here.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/41/416841.xml</lyric>
+  </item>
+  <item>
+    <name>New York New York</name>
+    <artist>Matt Monro</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FNew%20York%20New%20York.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/50/584650.xml</lyric>
+  </item>
+  <item>
+    <name>Nothings Gonna Change My Love For You</name>
+    <artist>方大同</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FNothings%20Gonna%20Change%20My%20Love%20For%20You.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/24/524.xml</lyric>
+  </item>
+  <item>
+    <name>Piece Of My Heart</name>
+    <artist>Eric Clapton</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FPiece%20Of%20My%20Heart.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>Running On Faith</name>
+    <artist>Eric Clapton</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FRunning%20On%20Faith.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/37/299737.xml</lyric>
+  </item>
+  <item>
+    <name>tears in heaven</name>
+    <artist>Eric Clapton</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2Ftears%20in%20heaven.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/57/76057.xml</lyric>
+  </item>
+  <item>
+    <name>the closest thing to crazy</name>
+    <artist>Katie Melua</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2Fthe%20closest%20thing%20to%20crazy.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/12/329412.xml</lyric>
+  </item>
+  <item>
+    <name>Torch Song</name>
+    <artist>Priscilla Ahn</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FTorch%20Song.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/50/838550.xml</lyric>
+  </item>
+  <item>
+    <name>Water Lilies</name>
+    <artist/>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FWater%20Lilies.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>Weve Only Just Begun</name>
+    <artist>王若琳</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FWeve%20Only%20Just%20Begun.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/87/425187.xml</lyric>
+  </item>
+  <item>
+    <name>Wonderful Tonight</name>
+    <artist>方大同</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FWonderful%20Tonight(%E6%96%B9%E5%A4%A7%E5%90%8C).mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/30/624430.xml</lyric>
+  </item>
+  <item>
+    <name>wonderful tonight</name>
+    <artist>Eric Clapton</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2Fwonderful%20tonight.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/73/100873.xml</lyric>
+  </item>
+  <item>
+    <name>Young And Beautiful</name>
+    <artist>Lana Del Rey</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2FYoung%20And%20Beautiful.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>红豆</name>
+    <artist>方大同</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2F%E7%BA%A2%E8%B1%86.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/30/475730.xml</lyric>
+  </item>
+  <item>
+    <name>你是我的女人</name>
+    <artist>胡琳</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2F%E4%BD%A0%E6%98%AF%E6%88%91%E7%9A%84%E5%A5%B3%E4%BA%BA.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/5/714405.xml</lyric>
+  </item>
+  <item>
+    <name>恰似你的温柔</name>
+    <artist>蔡琴</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2F%E6%81%B0%E4%BC%BC%E4%BD%A0%E7%9A%84%E6%B8%A9%E6%9F%94.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/9/27709.xml</lyric>
+  </item>
+  <item>
+    <name>楽光</name>
+    <artist/>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2F%E6%B5%AA%E6%BC%AB%E7%9A%84%E5%A4%9C%E6%99%9A%2F%E6%A5%BD%E5%85%89.mp3</url>
+    <lyric>null</lyric>
+  </item>
+</playlist>

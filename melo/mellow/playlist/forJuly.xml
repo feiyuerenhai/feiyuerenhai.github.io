@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="gb2312"?>
+<playlist update="2014/1/1" prior="0">
+  <!--追加时间：2014年01月01日-->
+  <item>
+    <name>IM_full(加长+字幕)</name>
+    <artist/>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2FIM_full.mp3</url>
+    <lyric>http://www.xblmcgs.com/melo/lrc/im.lrc</lyric>
+  </item>
+  <item>
+    <name>IM_raw(130829初版)</name>
+    <artist/>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2FIM_raw130829.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>IM</name>
+    <artist/>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2FIM.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>shenandoah theme to last 3 minutes(IM背景音乐)</name>
+    <artist/>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2Fshenandoah%20theme%20to%20last%203%20minutes.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>Shenandoah(大提琴)</name>
+    <artist/>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2FShenandoah(%E5%A4%A7%E6%8F%90%E7%90%B4).mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>Shenandoah(口风琴)</name>
+    <artist/>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2FShenandoah(%E5%8F%A3%E9%A3%8E%E7%90%B4).mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>Shenandoah</name>
+    <artist>Hayley Westenra</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2FShenandoah.mp3</url>
+    <lyric>http://music.qq.com/miniportal/static/lyric/88/283388.xml</lyric>
+  </item>
+  <item>
+    <name>01 - 卑微的你</name>
+    <artist>10 Days</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2F01%20-%20%E5%8D%91%E5%BE%AE%E7%9A%84%E4%BD%A0.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>02 - 风干的玫瑰花瓣</name>
+    <artist>10 Days</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2F02%20-%20%E9%A3%8E%E5%B9%B2%E7%9A%84%E7%8E%AB%E7%91%B0%E8%8A%B1%E7%93%A3.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>03 - 陪我看细水长流</name>
+    <artist>10 Days</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2F03%20-%20%E9%99%AA%E6%88%91%E7%9C%8B%E7%BB%86%E6%B0%B4%E9%95%BF%E6%B5%81.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>04 - 我的爱情观</name>
+    <artist>10 Days</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2F04%20-%20%E6%88%91%E7%9A%84%E7%88%B1%E6%83%85%E8%A7%82.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>05 - 在女神家悲了个催</name>
+    <artist>10 Days</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2F05%20-%20%E5%9C%A8%E5%A5%B3%E7%A5%9E%E5%AE%B6%E6%82%B2%E4%BA%86%E4%B8%AA%E5%82%AC.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>05&amp;06之间 - 高温大放送</name>
+    <artist>10 Days</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2F05&amp;06%E4%B9%8B%E9%97%B4%20-%20%E9%AB%98%E6%B8%A9%E5%A4%A7%E6%94%BE%E9%80%81.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>06 - 致小妞的信</name>
+    <artist>10 Days</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2F06%20-%20%E8%87%B4%E5%B0%8F%E5%A6%9E%E7%9A%84%E4%BF%A1.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>07 - 08年我们结婚</name>
+    <artist>10 Days</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2F07%20-%2008%E5%B9%B4%E6%88%91%E4%BB%AC%E7%BB%93%E5%A9%9A.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>08 - 你生命中的三个姑娘</name>
+    <artist>10 Days</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2F08%20-%20%E4%BD%A0%E7%94%9F%E5%91%BD%E4%B8%AD%E7%9A%84%E4%B8%89%E4%B8%AA%E5%A7%91%E5%A8%98.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>the easy piece</name>
+    <artist>10 Days</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2Fthe%20easy%20piece.mp3</url>
+    <lyric>null</lyric>
+  </item>
+  <item>
+    <name>写给我曾经爱过的你</name>
+    <artist>10 Days</artist>
+    <url>https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FforJuly%2F%E5%86%99%E7%BB%99%E6%88%91%E6%9B%BE%E7%BB%8F%E7%88%B1%E8%BF%87%E7%9A%84%E4%BD%A0.mp3</url>
+    <lyric>null</lyric>
+  </item>
+</playlist>

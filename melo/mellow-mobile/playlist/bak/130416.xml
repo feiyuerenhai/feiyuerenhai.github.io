@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<playlist directory="https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FShiGuangJi%2F">
+  <track>
+    <title>Angel</title>
+    <artist>Sarah McLachlan</artist>
+    <album>Surfacing</album>
+    <id>1189468</id>
+    <length>272</length>
+  </track>
+  <track>
+    <title>爱情转移</title>
+    <artist>陈奕迅</artist>
+    <album>1997-2007 跨世纪国语精选</album>
+    <id>2067248</id>
+    <length>262</length>
+  </track>
+  <track>
+    <title>Autumn Leaves</title>
+    <artist>Eric Clapton</artist>
+    <album>Autumn Leaves</album>
+    <id>1773183347</id>
+    <length>340</length>
+  </track>
+  <track>
+    <title>不完整的旋律</title>
+    <artist>王力宏</artist>
+    <album>改变自己</album>
+    <id>55556</id>
+    <length>247</length>
+  </track>
+  <track>
+    <title>岛歌</title>
+    <artist>游学志</artist>
+    <album>陶笛梦想家</album>
+    <id>53698</id>
+    <length>302</length>
+  </track>
+  <track>
+    <title>第一个清晨</title>
+    <artist>王力宏</artist>
+    <album>盖世英雄</album>
+    <id>380866</id>
+    <length>287</length>
+  </track>
+  <track>
+    <title>浮夸</title>
+    <artist>陈奕迅</artist>
+    <album>Solidays</album>
+    <id>3075078</id>
+    <length>288</length>
+  </track>
+  <track>
+    <title>浮夸 (Live)</title>
+    <artist>林志炫</artist>
+    <album>我是歌手第一季</album>
+    <id>3509643</id>
+    <length>288</length>
+  </track>
+  <track>
+    <title>Kiss Goodbye</title>
+    <artist>王力宏</artist>
+    <album>盖世英雄</album>
+    <id>380863</id>
+    <length>262</length>
+  </track>
+  <track>
+    <title>流浪记 (Live)</title>
+    <artist>杨宗纬</artist>
+    <album>我是歌手第一季</album>
+    <id>1771759935</id>
+    <length>308</length>
+  </track>
+  <track>
+    <title>流泪手心</title>
+    <artist>王力宏</artist>
+    <album>不可能错过你</album>
+    <id>380788</id>
+    <length>295</length>
+  </track>
+  <track>
+    <title>浪漫爱</title>
+    <artist>江语晨</artist>
+    <album>晴天娃娃</album>
+    <id>3418004</id>
+    <length>250</length>
+  </track>
+  <track>
+    <title>我离开我自己 (Live)</title>
+    <artist>杨宗纬</artist>
+    <album>我是歌手第一季</album>
+    <id>3509642</id>
+    <length>258</length>
+  </track>
+</playlist>
