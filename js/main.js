@@ -13,9 +13,9 @@ function scrollToBoard() {
 // 防抖动函数
 function debounce(func, wait, immediate) {
   var timeout;
-  return function() {
+  return function () {
     var context = this, args = arguments;
-    var later = function() {
+    var later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
@@ -27,6 +27,9 @@ function debounce(func, wait, immediate) {
 }
 
 $(document).ready(function () {
+  // 缩略图随机颜色
+  var bitchColors = ['#d0ddf0', '#f3cadc', '#a0a891', '#a3a693', '#898198', '#bfd2b6', '#bfd2b4', '#a3839a', '#eefde8', '#979886', '#a69289'];
+  console.log($('#board .index-card :not(.index-info) a img').css('background-color', bitchColors[Math.floor(bitchColors.length * Math.random())]));
   // 顶部菜单的动效
   var navbar = $('#navbar');
   if (navbar.offset().top > 0) {
