@@ -441,10 +441,6 @@ a.police-beian img {
   width: 100%;
   height: 10rem;
   object-fit: cover;
-  transition: all 0.3s ease-out;
-}
-.index-thumbnails:hover {
-  transform: scale(1.1);
 }
 .index-excerpt {
   margin: 0.5rem 0 0.5rem 0;
