@@ -417,11 +417,6 @@ a.police-beian img {
 .index-card {
   margin-bottom: 2rem;
 }
-.index-card :not(.index-info) a {
-  border-radius: 0.25rem !important;
-  display: inline-block;
-  overflow: hidden;
-}
 .index-img {
   box-shadow: 0 5px 11px 0 rgba(0,0,0,0.01), 0 4px 15px 0 rgba(0,0,0,0.1);
 }
