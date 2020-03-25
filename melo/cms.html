@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>cms</title>
+<script language="javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script language="javascript">
+var wid;
+var hit;
+$(document).ready(function(e) {
+	//
+	presize($(".film").find("img").eq(0));
+    //
+	wid = $(window).width();
+	hit = $(window).height();
+	//调用父框架的页面尺寸
+	if(typeof(parent.VW)!="undefined"){
+		wid = parent.VW;
+	};
+	if(typeof(parent.VH)!="undefined"){
+		hit = parent.VH;
+	};
+	$(".frame").width(wid);
+	$(".film").width(wid*$(".frame").length);
+	$(".film").height(hit);
+	$(".screen").width(wid);
+	$(".screen").height(hit);
+	//
+	$("html").click(function(e) {
+		var msx = e.pageX;
+		var left = parseInt($(".film").css("left"));
+		if(msx>=wid/2 && !$(".film").is(":animated")){
+			presize($(".film").find(".frame").find("img").eq(1));
+			$(".film").animate({"left":(left-wid)+"px"},"slow",function(){
+				$(".film").css("left","0px");
+				var tmp = $(".film").find(".frame").eq(0);
+				tmp.remove();
+				tmp.appendTo($(".film"));
+			});
+		}else if(msx<wid/2 && !$(".film").is(":animated")){
+			presize($(".film").find("img").eq($(".film").find("img").length-1));
+			var tmp = $(".film").find(".frame").eq($(".film").find(".frame").length-1);
+			tmp.remove();
+			$(".film").prepend(tmp);
+			$(".film").css("left",(-wid)+"px");
+			$(".film").animate({"left":left+"px"},"slow",function(){
+				$(".film").css("left","0px");
+			});
+		};
+    });
+	for(var k=0;k<$(".text").length;k++){
+		var tmp = $(".text").eq(k);
+		tmp.css("top",(hit-tmp.height())/2+"px");
+	};
+});
+function presize(target){
+	$("<img/>").attr("src", target.attr("src")).load(function() {
+		var img_w = this.width;
+		var img_h = this.height;
+		if(img_h>hit){
+			target.css("height",hit);
+		}else{
+			target.css("top",(hit-img_h)/2+"px")
+		};
+	});
+};
+</script>
+<style type="text/css">
+* {
+	padding: 0;
+	margin: 0
+}
+body {
+	font-family: Arial, "微软雅黑", "黑体";
+	background:#F4FBF2;
+	background: #111 url(data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAGklEQVR42mMQhAEJCQkGOAtIMsBZIA6cBQQAW5wDhYzvi1MAAAAASUVORK5CYII%3D);
+	-moz-user-select: none; /*火狐*/
+	-webkit-user-select: none;  /*webkit浏览器*/
+	-ms-user-select: none;   /*IE10*/
+	-khtml-user-select: none; /*早期浏览器*/
+	user-select: none;
+}
+ul {
+	list-style: none
+}
+.screen {
+	overflow: hidden;
+}
+.film {
+	position: relative;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.frame {
+	position: relative;
+	float: left;
+	text-align: center;
+	width:100%;
+	height:100%;
+}
+img{
+	position:relative;
+	top:0px;
+}
+.text{
+	position:relative;
+	margin:0 auto;
+	top:0px;
+	width:600px;
+	font-size:16px;
+	line-height:32px;
+	text-align:left;
+	color:#ecf0f1;
+}
+p{
+	text-indent:32px;
+}
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="film">
+    <div class="frame"> <div class="text" style="height:160px;"><p>Becoming Easy And Mighty - Beam CMS，是一款轻量型网站内容管理系统。最大特点是“化繁为简”，使用者无须再大规模制作统一文件名称的模板，在Beam CMS中，您可以设置接口指向任意路径的模板文件，程序读取该模板后会自动向其所在位置发送代理文件，通过计算目标模板与CMS程序路径的关系，代理能够回调数据库中的任意内容，与此同时生成静态内容页，以减轻服务器压力。</p></div> </div>
+    <div class="frame"> <img src="cmsdemo/ui_login.jpg" /> </div>
+    <div class="frame"> <img src="cmsdemo/ui_edit.jpg" /> </div>
+    <div class="frame"> <img src="cmsdemo/ui_category.jpg" /> </div>
+    <div class="frame"> <img src="cmsdemo/ui_arc.jpg" /> </div>
+    <div class="frame"> <img src="cmsdemo/ui_io.jpg" /> </div>
+    <div class="frame"> <img src="cmsdemo/ui_set.jpg" /> </div>
+    <div class="frame"> <div class="text" style="height:96px;"><p>Beam CMS 还很年轻，还在不断地改进与测试之中，将来会开放下载。但是如果您已经获得了允许，得到了供测试使用的用户名与密码，请 <a href="#">点击这里</a> 进入。</p><p>Have a good day !</p></div> </div>
+    <div class="frame"> <div class="text" style="height:32px;"><p style="text-align:center;">Thank you !</p></div> </div>
+  </div>
+</div>
+</body>
+</html>

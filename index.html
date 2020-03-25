@@ -105,9 +105,17 @@
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.png')no-repeat center center;
+    <div class="view intro-2" id="background" parallax=true style="background: url('/img/default.png')no-repeat center center;
            background-size: cover;">
+      <script>
+        (function () {
+          var len = 1;
+          var str = '000000000' + Math.round(Math.random() * len);
+          var num = str.substr(str.length - String(len).length);
+          var background = document.getElementById('background');
+          // background && background.style.backgroundImage = 'url(xxx)';
+        })();
+      </script>
       <div class="full-bg-img">
         <div class="mask rgba-black-light flex-center">
           <div class="container text-center white-text fadeInUp">
@@ -119,9 +127,9 @@
           </div>
 
           
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
-            </div>
+          <div class="scroll-down-bar">
+            <i class="fas fa-angle-down scroll-down-arrow"></i>
+          </div>
           
         </div>
       </div>
@@ -130,13 +138,13 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+    <div class="container nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-10 m-auto">
+              
 
 
   <div class="row mx-auto index-card">
@@ -306,18 +314,34 @@
         
         <div class="index-excerpt" >
           <div class="index-text mb-1">mellow此处安放着年久失修的mellow标本
-1. mellow (2008 - 2015)访问链接
+
+mellow (2008 - 2015)
+
+访问链接
 
 
 
 
-2. melo (2015)移动访问链接
+
+melo (2015)
+
+移动访问链接
 
 
-3. melo-home (2015)移动访问链接
+
+melo-home (2015)
+
+移动访问链接
 
 
-4. 和mellow有关的其他杂物
+
+beam-cms (2015)
+
+演示链接
+
+和mellow有关的其他杂物
+
+
 需要回答问题
 
 function display(){
@@ -374,22 +398,22 @@ memo.mp3
 
 
 
-              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     
   </main>
 
   
-    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
-      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
-    </a>
+  <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+    <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+  </a>
   
 
   
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+  <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
@@ -566,4 +590,5 @@ memo.mp3
 
 
 </body>
+
 </html>
