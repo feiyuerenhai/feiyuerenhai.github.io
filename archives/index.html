@@ -109,11 +109,11 @@
            background-size: cover;">
       <script>
         (function () {
-          var len = 1;
+          var len = 41;
           var str = '000000000' + Math.round(Math.random() * len);
           var num = str.substr(str.length - String(len).length);
           var background = document.getElementById('background');
-          // background && background.style.backgroundImage = 'url(xxx)';
+          background && (background.style.backgroundImage = "url('/img/banner/" + num + ".jpg')");
         })();
       </script>
       <div class="full-bg-img">
@@ -143,7 +143,7 @@
               
 
 <div class="list-group">
-  <p class="h4">共计 4 篇文章</p>
+  <p class="h4">共计 5 篇文章</p>
   <hr>
   
     
@@ -168,6 +168,15 @@
     <a href="/2018/11/21/%E9%98%BF%E9%87%8C%E4%B8%A4%E5%91%A8%E5%B9%B4/" class="list-group-item list-group-item-action">
       <span class="archive-post-title">阿里两周年</span>
       <span style="float: right;">11-21</span>
+    </a>
+  
+    
+      
+      <p class="h5">2017</p>
+    
+    <a href="/2017/10/24/%E6%9C%88%E6%99%93%E7%A7%8B%E5%87%89/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">月晓秋凉</span>
+      <span style="float: right;">10-24</span>
     </a>
   
     

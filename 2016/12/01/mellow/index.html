@@ -109,11 +109,11 @@
            background-size: cover;">
       <script>
         (function () {
-          var len = 1;
+          var len = 41;
           var str = '000000000' + Math.round(Math.random() * len);
           var num = str.substr(str.length - String(len).length);
           var background = document.getElementById('background');
-          // background && background.style.backgroundImage = 'url(xxx)';
+          background && (background.style.backgroundImage = "url('/img/banner/" + num + ".jpg')");
         })();
       </script>
       <div class="full-bg-img">
@@ -233,7 +233,7 @@ function display(){
 <br/>
 <a href="/melo/memo.mp3.rar">memo.mp3</a>
 <div style="text-align: center">
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=17541180&auto=0&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=441479&auto=0&height=66"></iframe>
 </div>
 </div>
 
