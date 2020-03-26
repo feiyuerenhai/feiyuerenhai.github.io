@@ -27,9 +27,33 @@ function debounce(func, wait, immediate) {
 }
 
 $(document).ready(function () {
+
   // 缩略图随机颜色
-  var bitchColors = ['#d0ddf0', '#f3cadc', '#a0a891', '#a3a693', '#898198', '#bfd2b6', '#bfd2b4', '#a3839a', '#eefde8', '#979886', '#a69289'];
-  $('#board .index-card :not(.index-info) a img').css('background-color', bitchColors[Math.floor(bitchColors.length * Math.random())]);
+  (function () {
+    var bitchColors = ['#d0ddf0', '#f3cadc', '#a0a891', '#a3a693', '#898198', '#bfd2b6', '#bfd2b4', '#a3839a', '#eefde8', '#979886', '#a69289'];
+    $('#board .index-card :not(.index-info) a img').css('background-color', bitchColors[Math.floor(bitchColors.length * Math.random())]);
+  })();
+
+  // 初始化aplayer播放器
+  (function () {
+    var $aplayer = $('.aplayer');
+    if (!window.APlayer || !$aplayer.length) return;
+    $aplayer.css('width', '330px').css('margin', '10px auto');
+    for (var i = 0; i < $aplayer.length; i++) {
+      var $tmp = $aplayer.eq(i);
+      new APlayer({
+        container: $tmp[0],
+        theme: '#e9e9e9',
+        audio: [{
+          url: $tmp.data('url'),
+          name: $tmp.data('name'),
+          artist: $tmp.data('artist'),
+          cover: $tmp.data('cover') || '/img/music.png',
+        }]
+      });
+    };
+  })();
+  
   // 顶部菜单的动效
   var navbar = $('#navbar');
   if (navbar.offset().top > 0) {
