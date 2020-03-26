@@ -109,7 +109,8 @@
            background-size: cover;">
       <script>
         (function () {
-          var len = 41;
+          if (window.location.pathname != '/') return;
+          var len = 38;
           var str = '000000000' + Math.round(Math.random() * len);
           var num = str.substr(str.length - String(len).length);
           var background = document.getElementById('background');
