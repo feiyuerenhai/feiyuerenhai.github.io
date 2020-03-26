@@ -38,7 +38,6 @@ $(document).ready(function () {
   (function () {
     var $aplayer = $('.aplayer');
     if (!window.APlayer || !$aplayer.length) return;
-    $aplayer.css('width', '330px').css('margin', '10px auto');
     for (var i = 0; i < $aplayer.length; i++) {
       var $tmp = $aplayer.eq(i);
       new APlayer({
@@ -53,7 +52,7 @@ $(document).ready(function () {
       });
     };
   })();
-  
+
   // 顶部菜单的动效
   var navbar = $('#navbar');
   if (navbar.offset().top > 0) {

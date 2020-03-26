@@ -580,6 +580,10 @@ h6::before {
 .katex-block {
   overflow-x: auto;
 }
+.aplayer {
+  max-width: 330px;
+  margin: 5px auto !important;
+}
 .about-avatar {
   position: relative;
   margin: -8rem auto 1rem;

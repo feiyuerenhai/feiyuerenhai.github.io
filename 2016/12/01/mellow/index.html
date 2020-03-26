@@ -194,15 +194,6 @@
 <h2 id="beam-cms-2015"><a href="#beam-cms-2015" class="headerlink" title="beam-cms (2015)"></a>beam-cms (2015)</h2><p><a href="/melo/cms.html">演示链接</a></p>
 <h2 id="和mellow有关的其他杂物"><a href="#和mellow有关的其他杂物" class="headerlink" title="和mellow有关的其他杂物"></a>和mellow有关的其他杂物</h2>
 <a href="javascript: display()">需要回答问题</a>
-<script>
-function display(){
-    if(window.prompt('我的名字？') !== 'fish') {
-        alert('sorry');
-        return;
-    };
-    $('.display-secret').css('display', 'block')
-}
-</script>
 <div class="display-secret" style="display: none">
 <br/>
 <a href="/melo/album/index.html?theater">theater</a>
@@ -219,12 +210,19 @@ function display(){
 <br/>
 <a href="/melo/memo.mp3.rar">memo.mp3</a>
 <br/>
-
-
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 <div class="aplayer" data-url="/media/wonderful_tonight.mp3" data-name="Wonderful Tonight" data-artist="Eric Clapton"></div>
+</div>
+<script>
+function display(){
+    if(window.prompt('我的名字？') !== 'fish') {
+        alert('sorry');
+        return;
+    };
+    $('.display-secret').css('display', 'block')
+}
+</script>
 
             <hr>
           </div>
