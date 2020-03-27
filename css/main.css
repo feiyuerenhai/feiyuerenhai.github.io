@@ -127,11 +127,11 @@ body a:hover {
   position: absolute;
   padding-top: 2rem;
   color: #fff;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
+  -webkit-transform: translateX(-50%) translateZ(0);
+  -moz-transform: translateX(-50%) translateZ(0);
+  -ms-transform: translateX(-50%) translateZ(0);
+  -o-transform: translateX(-50%) translateZ(0);
+  transform: translateX(-50%) translateZ(0);
   -webkit-animation: scroll-down 1.5s infinite;
   animation: scroll-down 1.5s infinite;
 }
