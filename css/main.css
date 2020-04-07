@@ -35,6 +35,11 @@ body a:hover {
   z-index: 3;
 }
 @media (max-width: 768px) {
+  header {
+    height: 70vh !important;
+  }
+}
+@media (max-width: 768px) {
   header .h2 {
     font-size: 1.5rem;
   }
