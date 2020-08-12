@@ -31,7 +31,7 @@ body a:hover {
   position: relative;
   margin-top: -3rem;
   background-color: #fff;
-  border-radius: 0.5rem;
+  border-radius: 20px;
   z-index: 3;
 }
 @media (max-width: 768px) {
