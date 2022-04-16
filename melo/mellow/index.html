@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv=Content-Language content=zh-cn>
+<meta name="keywords" content="flash,as3,在线,音乐,播放器,音乐盒,mellow,melo,于海涛,飞越人海">
+<meta name="description" content="mellow是由飞越人海开发的基于AS3的音乐播放器，整个程序配合PHP使用，可以实现在线听音乐，搜索歌曲，模拟NES游戏，RSS阅读等功能">
+<meta name="Robots" content="all">
+<title>mellow</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<style type="text/css">
+<!--
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #000000;
+}
+a:link {
+	color: #999999;
+}
+a:visited {
+	color: #999999;
+}
+-->
+</style>
+<script>
+//swf中用来改变页面标题的接口函数
+function SetTitle(info) {
+    document.title=info
+}
+</script>
+</head>
+<body scroll=no>
+<script language="javascript">
+//检测Adobe Flash Player插件
+var isIE = (navigator.appVersion.indexOf("MSIE") >= 0);
+var hasFlash=true;
+if (isIE) {
+	try {
+		var objFlash=new ActiveXObject("ShockwaveFlash.ShockwaveFlash.1");
+	} catch (e) {
+		hasFlash=false;
+	}
+} else {
+	if (! navigator.plugins["Shockwave Flash"]) {
+		hasFlash=false;
+	}
+}
+if (!hasFlash) {
+	document.write('<br></br><div align="center"><font size=2 color="gray">O_o 糟糕 您的浏览器未启用或者不支持 <a href=http://get.adobe.com/cn/flashplayer target=_blank>Adobe Flash Player</a> 控件<br></br><br>您可以 <a href=http://get.adobe.com/cn/flashplayer target=_blank>点击此处</a> 尝试安装 或者 换用一个运行其他系统（如Windows、Mac OS等）的设备再次访问</br><br></br><br><img src="logo.jpg"></img></br></font></div>');
+}
+</script>
+<script language="JavaScript">
+//写入核心swf程序
+if(hasFlash){
+var num=Math.floor(Math.random()*999999999);
+document.write('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="mellow.swf?'+num+'"codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="100%" height="100%" title=""><param name="movie" value="mellow.swf?'+num+'"><param name="quality" value="high"><param name="allowFullScreen" value="true" /><param name="wmode" value="transparent"><embed src="mellow.swf?'+num+'" width="100%" height="100%" quality="high" allowfullscreen="true" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed></object>');
+}
+</script>
+</body>
+</html>

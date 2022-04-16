@@ -1,0 +1,77 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Flash,nes,emulator" />
+<meta name="author" content="Amin" />
+<title>NES模拟器(Java VM)</title>
+<style>
+body{font-size:12px;margin:0px;height:100%;}
+</style>
+</head>
+<body bgcolor="green">
+<table width="100%" height="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="middle"><script language="JavaScript"> 
+var javawsInstalled = 0; 
+isIE = "false";
+if (navigator.mimeTypes && navigator.mimeTypes.length) 
+{ 
+x = navigator.mimeTypes['application/x-java-jnlp-file']; 
+if (x) 
+{ 
+   javawsInstalled = 1; 
+}
+} else 
+{ 
+isIE = "true"; 
+try { 
+   var java = new ActiveXObject("JavaWebStart.isInstalled"); 
+   if(!java)
+   {
+   InstallJava()
+	}
+} catch(ex) { 
+    InstallJava()
+} 
+} 
+function InstallJava(){
+var cf=confirm("请安装Java虚拟机!");
+if (cf==true){
+window.open("http://www.java.com/download")
+}else{
+window.close()
+}
+}
+</script>
+      <script>
+var url=window.location.href
+var nes=""
+if(url.indexOf("?")>0){
+var par=url.split("?")[1]
+nes=par.split("=")[1]
+}else{
+nes="chaojimali.zip"
+}
+if(nes==""){
+nes="chaojimali.zip"
+}
+document.write("<APPLET archive='AminNesJ.jar' code='AminNesJ.class' width=512 height=500><param name='rom' value="+nes+"></APPLET>");
+</script>
+    </td>
+  </tr>
+</table>
+<div style="display:none">
+  <script src="http://s1.cnzz.com/stat.php?id=1960302&web_id=1960302" language="JavaScript"></script>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8384144-5");
+pageTracker._setDomainName(".aminnes.com");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

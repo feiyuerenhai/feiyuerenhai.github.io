@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<playlist directory="https://pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=BAIDU_PSC_TOKEN&amp;path=%2Fapps%2FMellowDataBase%2FShiGuangJi%2F">
+  <track>
+    <title>Liekkas</title>
+    <artist>Sofia Jannok</artist>
+    <album>Assogattis: By The Embers</album>
+    <id>1769000347</id>
+    <length>203</length>
+  </track>
+  <track>
+    <title>每次都想呼喊你的名字</title>
+    <artist>张学友</artist>
+    <album>情无四归</album>
+    <id>75510</id>
+    <length>184</length>
+  </track>
+  <track>
+    <title>No More You</title>
+    <artist>Akon</artist>
+    <album>Stadium</album>
+    <id>1769473510</id>
+    <length>235</length>
+  </track>
+  <track>
+    <title>Right Now (Na Na Na)</title>
+    <artist>Akon</artist>
+    <album>Freedom</album>
+    <id>3438815</id>
+    <length>242</length>
+  </track>
+  <track>
+    <title>What I've Been Looking For</title>
+    <artist>Ashley Tisdale; Lucas Grabeel</artist>
+    <album>歌舞青春主题曲</album>
+    <id>2069541</id>
+    <length>123</length>
+  </track>
+  <track>
+    <title>夏天的风</title>
+    <artist>温岚</artist>
+    <album></album>
+    <id></id>
+    <length></length>
+  </track>
+  <track>
+    <title>夏天的味道</title>
+    <artist>石头剪刀布</artist>
+    <album></album>
+    <id></id>
+    <length></length>
+  </track>
+  <track>
+    <title>心雨</title>
+    <artist>江智民;周虹</artist>
+    <album>情人·朋友</album>
+    <id>1769757024</id>
+    <length>300</length>
+  </track>
+  <track>
+    <title>雪中红</title>
+    <artist>卓依婷;林正桦</artist>
+    <album>闽南语情歌大对唱</album>
+    <id>172412</id>
+    <length>243</length>
+  </track>
+  <track>
+    <title>因为爱情</title>
+    <artist>周虹;江智民</artist>
+    <album>情人·挚爱</album>
+    <id>1770724678</id>
+    <length>251</length>
+  </track>
+  <track>
+    <title>最重要的决定</title>
+    <artist>范玮琪</artist>
+    <album>Love and FanFan</album>
+    <id>1770046615</id>
+    <length>244</length>
+  </track>
+  <track>
+    <title>纸飞机</title>
+    <artist>张峰奇</artist>
+    <album></album>
+    <id></id>
+    <length></length>
+  </track>
+</playlist>
